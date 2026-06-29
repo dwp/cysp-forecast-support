@@ -1,0 +1,514 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Improving state pension for {{data['nino']}} 
+      </h1>
+
+      <strong class="tag tag--grey">7 years with gaps</strong>
+
+      <div class="govuk-inset-text">
+        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:10px">Estimate up to 5 April 2020</p>
+        <p class="govuk-body">£130.47 a week</p>
+      </div>
+
+      <table class="govuk-table">
+    <!-- <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption> -->
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header" style="padding-right:180px">Improve to</th>
+        <th scope="col" class="govuk-table__header">Gaps</th>
+        <th scope="col" class="govuk-table__header">Total cost</th>
+
+
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">
+          <details class="govuk-details" data-module="govuk-details" style="margin-bottom:5px">
+            <summary class="govuk-details__summary" style="width:400px;">
+              <span class="govuk-details__summary-text" style="text-decoration: none;">
+                £135.61 a week <strong class="govuk-tag govuk-tag--green" id="financial-evidence-status" style="margin-left:15px">Cheapest</strong>
+
+
+
+              </span>
+            </summary>
+            <div class="govuk-details__text" style="width:400px;margin-right:10px;">
+            <strong class="govuk-tag govuk-tag--blue" id="financial-evidence-status">Extra £5.14 a week</strong> <strong class="govuk-tag govuk-tag--blue" id="financial-evidence-status">Extra £268.20 a year</strong>
+<br><br>
+<table class="govuk-table">
+  <!-- <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption> -->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Shortfalls</th>
+      <th scope="col" class="govuk-table__header">Cost</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2013-2014</td>
+      <td class="govuk-table__cell">£100</td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+
+            </div>
+          </details>
+
+
+          <!-- £135.61 a week <strong class="govuk-tag govuk-tag--green" id="financial-evidence-status" style="margin-left:15px">Cheapest</strong> -->
+        </td>
+        <td class="govuk-table__cell">1</td>
+        <td class="govuk-table__cell">£100</td>
+
+
+<!-- <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">Cheapest</strong> -->
+
+      </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">
+          <details class="govuk-details" data-module="govuk-details" style="margin-bottom:5px">
+            <summary class="govuk-details__summary" style="width:400px;">
+              <span class="govuk-details__summary-text" style="text-decoration: none;">
+                £140.74 a week
+
+
+
+              </span>
+            </summary>
+            <div class="govuk-details__text" style="width:400px;margin-right:10px;">
+            <strong class="govuk-tag govuk-tag--blue" id="financial-evidence-status">Extra £5.14 a week</strong> <strong class="govuk-tag govuk-tag--blue" id="financial-evidence-status">Extra £268.20 a year</strong>
+<br><br>
+<table class="govuk-table">
+  <!-- <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption> -->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Shortfalls</th>
+      <th scope="col" class="govuk-table__header">Cost</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2018-2019</td>
+      <td class="govuk-table__cell">£100</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2017-2018</td>
+      <td class="govuk-table__cell">£100</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2016-2017</td>
+      <td class="govuk-table__cell">£400</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2015-2016</td>
+      <td class="govuk-table__cell">£300</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2014-2015</td>
+      <td class="govuk-table__cell">£200</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2013-2014</td>
+      <td class="govuk-table__cell">£100</td>
+    </tr>
+  </tbody>
+</table>
+
+
+            </div>
+          </details>
+
+
+          <!-- £135.61 a week <strong class="govuk-tag govuk-tag--green" id="financial-evidence-status" style="margin-left:15px">Cheapest</strong> -->
+        </td>
+        <td class="govuk-table__cell">2</td>
+<td class="govuk-table__cell">£200</td>
+
+
+      </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">
+          <details class="govuk-details" data-module="govuk-details" style="margin-bottom:5px">
+            <summary class="govuk-details__summary" style="width:400px;">
+              <span class="govuk-details__summary-text" style="text-decoration: none;">
+                £145.87 a week
+
+
+              </span>
+            </summary>
+            <div class="govuk-details__text" style="width:400px;margin-right:10px;">
+            <strong class="govuk-tag govuk-tag--blue" id="financial-evidence-status">Extra £5.14 a week</strong> <strong class="govuk-tag govuk-tag--blue" id="financial-evidence-status">Extra £268.20 a year</strong>
+<br><br>
+<table class="govuk-table">
+  <!-- <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption> -->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Shortfalls</th>
+      <th scope="col" class="govuk-table__header">Cost</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2018-2019</td>
+      <td class="govuk-table__cell">£100</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2017-2018</td>
+      <td class="govuk-table__cell">£100</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2016-2017</td>
+      <td class="govuk-table__cell">£400</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2015-2016</td>
+      <td class="govuk-table__cell">£300</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2014-2015</td>
+      <td class="govuk-table__cell">£200</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2013-2014</td>
+      <td class="govuk-table__cell">£100</td>
+    </tr>
+  </tbody>
+</table>
+
+
+            </div>
+          </details>
+
+
+          <!-- £135.61 a week <strong class="govuk-tag govuk-tag--green" id="financial-evidence-status" style="margin-left:15px">Cheapest</strong> -->
+        </td>
+        <td class="govuk-table__cell">3</td>
+<td class="govuk-table__cell">£300</td>
+
+      </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">
+          <details class="govuk-details" data-module="govuk-details" style="margin-bottom:5px">
+            <summary class="govuk-details__summary" style="width:400px;">
+              <span class="govuk-details__summary-text" style="text-decoration: none;">
+                £150.99 a week
+
+
+
+              </span>
+            </summary>
+            <div class="govuk-details__text" style="width:400px;margin-right:10px;">
+            <strong class="govuk-tag govuk-tag--blue" id="financial-evidence-status">Extra £5.14 a week</strong> <strong class="govuk-tag govuk-tag--blue" id="financial-evidence-status">Extra £268.20 a year</strong>
+<br><br>
+<table class="govuk-table">
+  <!-- <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption> -->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Shortfalls</th>
+      <th scope="col" class="govuk-table__header">Cost</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2018-2019</td>
+      <td class="govuk-table__cell">£100</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2017-2018</td>
+      <td class="govuk-table__cell">£100</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2016-2017</td>
+      <td class="govuk-table__cell">£400</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2015-2016</td>
+      <td class="govuk-table__cell">£300</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2014-2015</td>
+      <td class="govuk-table__cell">£200</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2013-2014</td>
+      <td class="govuk-table__cell">£100</td>
+    </tr>
+  </tbody>
+</table>
+
+
+            </div>
+          </details>
+
+
+          <!-- £135.61 a week <strong class="govuk-tag govuk-tag--green" id="financial-evidence-status" style="margin-left:15px">Cheapest</strong> -->
+        </td>
+        <td class="govuk-table__cell">4</td>
+<td class="govuk-table__cell">£500</td>
+
+
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">
+          <details class="govuk-details" data-module="govuk-details" style="margin-bottom:5px">
+            <summary class="govuk-details__summary" style="width:400px;">
+              <span class="govuk-details__summary-text" style="text-decoration: none;">
+                £151.01 a week
+
+
+
+              </span>
+            </summary>
+            <div class="govuk-details__text" style="width:400px;margin-right:10px;">
+            <strong class="govuk-tag govuk-tag--blue" id="financial-evidence-status">Extra £5.14 a week</strong> <strong class="govuk-tag govuk-tag--blue" id="financial-evidence-status">Extra £268.20 a year</strong>
+<br><br>
+<table class="govuk-table">
+  <!-- <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption> -->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Shortfalls</th>
+      <th scope="col" class="govuk-table__header">Cost</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2018-2019</td>
+      <td class="govuk-table__cell">£100</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2017-2018</td>
+      <td class="govuk-table__cell">£100</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2016-2017</td>
+      <td class="govuk-table__cell">£400</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2015-2016</td>
+      <td class="govuk-table__cell">£300</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2014-2015</td>
+      <td class="govuk-table__cell">£200</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2013-2014</td>
+      <td class="govuk-table__cell">£100</td>
+    </tr>
+  </tbody>
+</table>
+
+
+            </div>
+          </details>
+
+
+          <!-- £135.61 a week <strong class="govuk-tag govuk-tag--green" id="financial-evidence-status" style="margin-left:15px">Cheapest</strong> -->
+        </td>
+        <td class="govuk-table__cell">5</td>
+<td class="govuk-table__cell">£700</td>
+
+
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">
+          <details class="govuk-details" data-module="govuk-details" style="margin-bottom:5px">
+            <summary class="govuk-details__summary" style="width:400px;">
+              <span class="govuk-details__summary-text" style="text-decoration: none;">
+                £156.13 a week
+
+
+              </span>
+            </summary>
+            <div class="govuk-details__text" style="width:400px;margin-right:10px;">
+            <strong class="govuk-tag govuk-tag--blue" id="financial-evidence-status">Extra £5.14 a week</strong> <strong class="govuk-tag govuk-tag--blue" id="financial-evidence-status">Extra £268.20 a year</strong>
+<br><br>
+<table class="govuk-table">
+  <!-- <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption> -->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Shortfalls</th>
+      <th scope="col" class="govuk-table__header">Cost</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2018-2019</td>
+      <td class="govuk-table__cell">£100</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2017-2018</td>
+      <td class="govuk-table__cell">£100</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2016-2017</td>
+      <td class="govuk-table__cell">£400</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2015-2016</td>
+      <td class="govuk-table__cell">£300</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2014-2015</td>
+      <td class="govuk-table__cell">£200</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2013-2014</td>
+      <td class="govuk-table__cell">£100</td>
+    </tr>
+  </tbody>
+</table>
+
+
+            </div>
+          </details>
+
+
+          <!-- £135.61 a week <strong class="govuk-tag govuk-tag--green" id="financial-evidence-status" style="margin-left:15px">Cheapest</strong> -->
+        </td>
+        <td class="govuk-table__cell">6</td>
+<td class="govuk-table__cell">£800</td>
+
+
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">
+          <details class="govuk-details" data-module="govuk-details" style="margin-bottom:5px">
+            <summary class="govuk-details__summary" style="width:400px;">
+              <span class="govuk-details__summary-text" style="text-decoration: none;">
+                £161.27 a week <strong class="govuk-tag govuk-tag--green" id="financial-evidence-status" style="margin-left:15px">most can improve</strong>
+                <br>
+
+
+              </span>
+            </summary>
+            <div class="govuk-details__text" style="width:400px;margin-right:10px;">
+            <strong class="govuk-tag govuk-tag--blue" id="financial-evidence-status">Extra £5.14 a week</strong> <strong class="govuk-tag govuk-tag--blue" id="financial-evidence-status">Extra £268.20 a year</strong>
+<br><br>
+<table class="govuk-table">
+  <!-- <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption> -->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Shortfalls</th>
+      <th scope="col" class="govuk-table__header">Cost</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2018-2019</td>
+      <td class="govuk-table__cell">£100</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2017-2018</td>
+      <td class="govuk-table__cell">£100</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2016-2017</td>
+      <td class="govuk-table__cell">£400</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2015-2016</td>
+      <td class="govuk-table__cell">£300</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2014-2015</td>
+      <td class="govuk-table__cell">£200</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">2013-2014</td>
+      <td class="govuk-table__cell">£100</td>
+    </tr>
+  </tbody>
+</table>
+
+
+            </div>
+          </details>
+
+
+          <!-- £135.61 a week <strong class="govuk-tag govuk-tag--green" id="financial-evidence-status" style="margin-left:15px">Cheapest</strong> -->
+        </td>
+        <td class="govuk-table__cell">7</td>
+<td class="govuk-table__cell">£1200</td>
+
+
+      </tr>
+
+    </tbody>
+  </table>
+
+<p class="govuk-body">
+ <a href="enquiry" class="govuk-link">Back to record</a>
+</p>
+
+    </div>
+  </div>
+
+{% endblock %}

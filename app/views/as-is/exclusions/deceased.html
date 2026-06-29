@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-caption-l govuk-!-margin-top-0">NI number: ER 42 11 11 A</p>
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-8 ">Customer record has a date of death</h1>
+
+
+  <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Tell the customer
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">Sorry, I’m unable to see your record today.</p>
+    
+      <p class="govuk-notification-banner__heading">You can call HMRC to make sure your personal details are correct. I’ve got the number here for you.</p>
+    
+        <p class="govuk-notification-banner__heading">Where are you calling from today?</p>
+    
+    
+      <p class="govuk-body">UK: 0300 200 3500<br>Outside UK: +44 191 203 7010<br>Relay UK (for those that cannot hear or speak on the phone): 18001 0300 200 3500</p>
+  </div>
+</div>
+
+
+  <div class="govuk-inset-text govuk-!-margin-bottom-8">
+  <p class="govuk-body"><span class="govuk-!-font-weight-bold">BR19 process:</span> Go to <span class="govuk-!-font-weight-bold">The Hub</span>, select <span class="govuk-!-font-weight-bold">Letters</span> then <span class="govuk-!-font-weight-bold">Standard letters</span>. Send the customer the appropriate letter.</p>
+</div>
+
+
+  
+<form action="/sfcysp-frontend/back-to-start">
+  <button type="submit" class="govuk-button" data-module="govuk-button" id="back-to-start" data-govuk-button-init="">
+  Back to start
+</button>
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}

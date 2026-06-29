@@ -1,0 +1,115 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+<form method="post" autocomplete="off" novalidate="">
+
+    <span class="govuk-caption-l">NI number: {{data['nino']}}</span>
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6 ">I just need some contact details so we can post the forecast</h1>
+
+
+<fieldset class="govuk-fieldset govuk-!-margin-bottom-2">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-bottom-0">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-4">Third party details</h2>
+
+</legend>
+
+    <div class="govuk-hint">Enter the first name and last name and/or the company or organisation name.</div>
+
+    <div class="govuk-form-group">
+
+      <div class="govuk-form-group">
+<label class="govuk-label" for="thirdPartyForename">
+  First name
+</label>
+<input class="govuk-input govuk-!-width-two-thirds" id="thirdPartyForename" name="thirdParty[forename]" type="text">
+</div>
+
+
+      <div class="govuk-form-group">
+<label class="govuk-label" for="thirdPartySurname">
+  Last name
+</label>
+<input class="govuk-input govuk-!-width-two-thirds" id="thirdPartySurname" name="thirdParty[surname]" type="text">
+</div>
+
+
+      <div class="govuk-form-group">
+<label class="govuk-label" for="thirdPartyOrganisation">
+  Company or organisation name
+</label>
+<input class="govuk-input govuk-!-width-two-thirds" id="thirdPartyOrganisation" name="thirdParty[organisation]" type="text">
+</div>
+
+    </div>
+
+
+</fieldset>
+
+<fieldset class="govuk-fieldset govuk-!-margin-bottom-4">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-bottom-0">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-3">The person you represent</h2>
+
+</legend>
+
+    <div class="govuk-form-group">
+<label class="govuk-label" for="forename">
+  First name
+</label>
+<input class="govuk-input govuk-!-width-two-thirds" id="forename" name="forename" type="text">
+</div>
+
+
+    <div class="govuk-form-group">
+<label class="govuk-label" for="surname">
+  Last name
+</label>
+<input class="govuk-input govuk-!-width-two-thirds" id="surname" name="surname" type="text">
+</div>
+
+
+
+</fieldset>
+
+  <div class="govuk-form-group">
+<div class="govuk-checkboxes govuk-!-margin-bottom-8" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="welsh" name="welsh" type="checkbox" value="yes">
+          <label class="govuk-label govuk-checkboxes__label" for="welsh">
+      Welsh language forecast requested
+    </label>
+        </div>
+</div>
+</div>
+
+
+
+
+
+
+
+<a href="/vnics/forecast-request/postcode" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Continue
+
+</a>
+</form>
+  </div>
+</div>
+
+{% endblock %}

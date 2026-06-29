@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" action="/vnics/forecast-request/confirm-details" autocomplete="off" novalidate="">
+    <span class="govuk-caption-l">NI number: {{data['nino']}}</span>
+    <h1 class="govuk-heading-l"> <label for="address">Can i take the first line of your address?</label></h1>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Postcode:</span> {{data['postcode']}} <br> <a href="/vnics/forecast-request/postcode" class="govuk-link">Change</a></p>
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+          Select an address
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="updated" selected="">28 addresses found</option>
+          <option value="">0/1, 19 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">0/1, 37 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">0/1, 50 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">0/2, 17 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">0/2, 19 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">0/2, 27 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">0/2, 50 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">0/3, 50 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">1/1, 17 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">1/1, 27 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">1/1, 37 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">1/1, 50 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">1/2, 17 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">1/2, 27 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">1/2, 37 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">1/2, 50 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">1/3, 50 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">2/1, 17 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">2/1, 27 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">2/1, 37 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">2/1, 50 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">2/2, 17 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">2/2, 27 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">2/2, 37 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">2/2, 50 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">2/3, 50 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">3/1, 17 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">3/1, 27 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">3/1, 37 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">3/1, 50 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">3/2, 17 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">3/2, 27 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">3/2, 37 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">3/2, 50 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">3/3, 50 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">11 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">15 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">25 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">29 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">35 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">39 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">42 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+          <option value="">V M S LTD, 47-51 BROWNLIE STREET, GLASGOW, G42 9BT</option>
+        </select>
+      </div>
+
+    <p class="govuk-body"><a href="/vnics/forecast-request/overseas-address" class="govuk-link govuk-link--no-visited-state">Address not listed</a></p>
+
+    <button type="submit" class="govuk-button" data-module="govuk-button" id="find-address" >Continue</button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

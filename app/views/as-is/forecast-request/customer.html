@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/as-is/forecast-request/postcode" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">NI number: {{data['nino']}}</span>
+            <h1 class="govuk-fieldset__heading">
+              What is your full name?
+            </h1>
+          </legend>
+
+          <label class="govuk-label" for="full-name">
+            Full name
+          </label>
+          <input class="govuk-input" id="full-name" name="CustomerFullName" type="text" spellcheck="false" autocomplete="name">
+          </div>
+        </fieldset>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

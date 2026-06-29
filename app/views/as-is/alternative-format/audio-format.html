@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">NI number: {{data['nino']}}</span>
+      <h1 class="govuk-heading-l">Send forecast in audio format</h1>
+
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Tell the customer
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">I’ll post your State Pension forecast out to you in audio format.</p>
+          <p class="govuk-notification-banner__heading">Do you prefer cassette, CD, DVD or MP3?</p>
+        </div>
+      </div>
+
+      <div class="govuk-inset-text govuk-!-margin-bottom-8">
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">FPC1 process:</span> Add customer’s title, name, National Insurance number, contact number, date of birth and address.</p>
+        <p class="govuk-body">Select <span class="govuk-!-font-weight-bold">Call Centre</span> as the department and <span class="govuk-!-font-weight-bold">Alternative format</span> as the category.</p>  
+        <p class="govuk-body">Add <span class="govuk-!-font-weight-bold">Audio format</span> and <span class="govuk-!-font-weight-bold">cassette, CD, DVD or MP3</span> in the <span class="govuk-!-font-weight-bold">Notes</span> box.</p>
+      </div>
+
+      <p class="govuk-body"> <a href="enquiry" class="govuk-link">Back to record</a> </p>
+
+    </div>
+  </div>
+
+{% endblock %}

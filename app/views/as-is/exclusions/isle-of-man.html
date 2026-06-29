@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">NI number: AA 12 34 56 C</span>
+      <h1 class="govuk-heading-xl">
+        Customer with Isle of Man contributions
+      </h1>
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Tell the customer
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">I can see that you've paid National Insurance in the Isle of Man.</p>
+            <p class="govuk-notification-banner__heading">We need to take a look at your record. We'll post a forecast out to you when it's ready. It may only include your UK National Insurance contributions.</p>
+            <p class="govuk-notification-banner__heading">You may need to apply for your Isle of Man State Pension as well as your UK State Pension.</p>
+            <p class="govuk-notification-banner__heading">You can contact the Isle of Man pension centre. I've got the number here for you.</p>
+            <p class="govuk-body">Isle of Man pension centre: +44 1624 685176</p>
+        </div>
+      </div>
+
+      <div class="govuk-inset-text">
+<span class="govuk-body govuk-!-font-weight-bold">FPC 1 process:</span> Add customer's title, name, National Insurance number, contact number, date of birth and address.
+<br>
+Select <b>Specialist</b> as the department and <b>Isle Of Man</b> as the category.<span>
+</span></div>
+<br>
+
+<br>
+
+  <form class="form" action="/as-is/nino" method="post"> <button class="govuk-button" data-module="govuk-button">Back to start</button></form>
+  <br>
+      </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-caption-l govuk-!-margin-top-0">NI number: ER 47 11 11 A</p>
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-8 ">Missing COPE take customer details</h1>
+
+
+  <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Tell the customer
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">I can see that HMRC are checking your National Insurance record. This is to ensure your pension forecast is accurate and up to date.</p><p class="govuk-notification-banner__heading">There’s nothing to worry about, HMRC do regular updates on National Insurance records.</p><p class="govuk-notification-banner__heading">Your forecast will be sent out in the next 2-3 weeks.</p>
+  </div>
+</div>
+
+
+    <div class="govuk-inset-text govuk-!-margin-bottom-8">
+  <p class="govuk-body"><span class="govuk-!-font-weight-bold">FPC1 process:</span> Add customer’s title, name, National Insurance number, contact number, date of birth and address.</p>
+  
+          <p class="govuk-body">Select <span class="govuk-!-font-weight-bold">Digital</span> as the department and <span class="govuk-!-font-weight-bold">Missing COPE</span> as the category.</p>
+  
+            <p class="govuk-body">Select <span class="govuk-!-font-weight-bold">Missing COPE Pre 2025</span> and <span class="govuk-!-font-weight-bold">Yes</span> in the dropdown box.</p>
+  
+            <p class="govuk-body">Add HMRC’s completion date <span class="govuk-!-font-weight-bold">1 April</span> into the <span class="govuk-!-font-weight-bold">Notes</span> box.</p>
+</div>
+
+
+  
+<form action="/as-is/nino">
+  <button type="submit" class="govuk-button" data-module="govuk-button" id="back-to-start" data-govuk-button-init="">
+  Back to start
+</button>
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}

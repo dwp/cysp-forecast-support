@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+<span class="govuk-caption-l">NI number: {{data['nino']}}</span>
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6 ">Send letter to customer and third party</h1>
+
+
+<div class="govuk-inset-text govuk-!-margin-bottom-8">
+  <p class="govuk-body">Send <span class="govuk-!-font-weight-bold">BR19 third party rejection letter</span> to third party representative.</p>
+
+<p class="govuk-body"><span class="govuk-!-font-weight-bold">Send State Pension forecast to the customer</span>.</p>
+
+<p class="govuk-body">If third party asks how to be the customer's legal representative, send <span class="govuk-!-font-weight-bold">BR19 third request letter</span>.</p>
+
+</div>
+
+
+
+<form method="post" autocomplete="off" novalidate="">
+
+
+
+
+  <a href="/vnics/forecast-request/customer" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+    Continue
+
+  </a>
+</form>
+
+  </div>
+  </div>
+
+{% endblock %}

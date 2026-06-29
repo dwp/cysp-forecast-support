@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Check the amounts you entered</h1>
+
+    <table class="govuk-table govuk-!-margin-bottom-8">
+  <caption class="govuk-table__caption govuk-visually-hidden">Pre Deadline Gaps cost table</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Years</th>
+      <th scope="col" class="govuk-table__header">Earnings</th>
+      <th scope="col" class="govuk-table__header">Cost</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2023-2024</td>
+      <td class="govuk-table__cell">      £45,000.00
+</td>
+      <td class="govuk-table__cell">    <strong class="govuk-tag govuk-tag--orange govuk-!-font-weight-bold">
+  £0.00
+</strong>
+
+</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2022-2023</td>
+      <td class="govuk-table__cell">      £10,000.00
+</td>
+      <td class="govuk-table__cell">    <strong class="govuk-tag govuk-tag--orange govuk-!-font-weight-bold">
+  £0.00
+</strong>
+
+</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021-2022</td>
+      <td class="govuk-table__cell">      £100.00
+</td>
+      <td class="govuk-table__cell">    <strong class="govuk-tag govuk-tag--orange govuk-!-font-weight-bold">
+  £785.40
+</strong>
+
+</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2015-2016</td>
+      <td class="govuk-table__cell">      £1.00
+</td>
+      <td class="govuk-table__cell">    <strong class="govuk-tag govuk-tag--orange govuk-!-font-weight-bold">
+  £824.20
+</strong>
+
+</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2014-2015</td>
+      <td class="govuk-table__cell">      £0.00
+</td>
+      <td class="govuk-table__cell">    <strong class="govuk-tag govuk-tag--orange govuk-!-font-weight-bold">
+  £824.20
+</strong>
+
+</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2013-2014</td>
+      <td class="govuk-table__cell">      £0.00
+</td>
+      <td class="govuk-table__cell">    <strong class="govuk-tag govuk-tag--orange govuk-!-font-weight-bold">
+  £824.20
+</strong>
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  
+<form method="post" action="/as-is/pre-deadline-gaps/still-contributing" autocomplete="off" novalidate="">
+
+
+
+
+    <button type="submit" class="govuk-button" data-module="govuk-button" id="confirm" data-govuk-button-init="">
+  Confirm
+</button>
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}

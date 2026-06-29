@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Is the customer still contributing National Insurance?</h1>
+
+
+<form method="post" action="/vnics/pre-deadline-gaps/improve-state-pension" autocomplete="off" novalidate="">
+        <div class="govuk-form-group govuk-!-margin-bottom-8">
+  <div class="govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="stillContributing" name="stillContributing" type="radio" value="yes" aria-controls="conditional-stillContributing" aria-expanded="false">
+      <label class="govuk-label govuk-radios__label" for="stillContributing">
+        Yes
+      </label>
+    </div>
+    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-stillContributing">
+      <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="contributingUntil-hint">
+    <legend class="govuk-fieldset__legend">
+      What date will they stop?
+    </legend>
+    <div id="contributingUntil-hint" class="govuk-hint">
+      Customer is State Pension age on 1 November 2027
+    </div>
+    <div class="govuk-date-input" id="contributingUntil">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month" name="month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year" name="year" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="stillContributing-2" name="stillContributing" type="radio" value="no">
+      <label class="govuk-label govuk-radios__label" for="stillContributing-2">
+        No
+      </label>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+    <button type="submit" class="govuk-button" data-module="govuk-button" id="calculate" data-govuk-button-init="">
+  Calculate
+</button>
+</form>
+    </div>
+  </div>
+
+{% endblock %}

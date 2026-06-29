@@ -1,0 +1,129 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+        
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Forecast information for {{data['nino']}}</h1>
+
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+          <button type="button" id="accordion-default-heading-1" aria-controls="accordion-default-content-1" class="govuk-accordion__section-button" aria-expanded="false">Overview<span class="govuk-accordion__icon" aria-hidden="true"></span></button></h2></div>
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+               <div class="govuk-!-margin-bottom-8">
+  <ul class="govuk-list govuk-!-margin-bottom-0">
+    <li class="tr-li">
+      <span>State Pension date</span>
+
+      <span class="govuk-!-text-align-right"><strong class="tag tag--grey">
+  1 November 2052
+</strong>
+</span>
+    </li>
+
+    <li class="tr-li">
+      <span>Final Relevant Year (FRY)</span>
+
+      <span class="govuk-!-text-align-right"><strong class="tag tag--grey">
+  2051-52 (29 years to FRY)
+</strong>
+</span>
+    </li>
+
+    <li class="tr-li">
+      <span>Estimate up to 11 April 2023</span>
+
+      <span class="govuk-!-text-align-right"><strong class="tag tag--grey">
+  £83.73 every week
+</strong>
+</span>
+    </li>
+
+    <li class="tr-li">
+      <span>Qualifying years</span>
+
+      <span class="govuk-!-text-align-right"><strong class="tag tag--grey">
+  17
+</strong>
+</span>
+    </li>
+
+
+      <li class="overview-reduced-rate-election">
+        <h3 class="govuk-heading-s">Reduced Rate Election estimate</h3>
+
+        <ul class="govuk-list govuk-!-margin-0">
+          <li class="tr-li border-off">
+            <span>If married or in every civil partnership</span>
+
+            <span class="govuk-!-text-align-right"><strong class="tag tag--grey">
+  £134.10 every week
+</strong>
+</span>
+          </li>
+
+          <li class="tr-li border-off">
+            <span>If widowed or divorced</span>
+
+            <span class="govuk-!-text-align-right"><strong class="tag tag--grey">
+  £208.20 every week
+</strong>
+</span>
+          </li>
+        </ul>
+      </li>
+
+    <li class="tr-li border-bottom">
+      <span>COPE estimate</span>
+
+      <span class="govuk-!-text-align-right"><strong class="tag govuk-!-text-align-right tag--grey">
+  £0.00 every week
+</strong>
+</span>
+    </li>
+  </ul>
+</div>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  
+                <button type="button" id="accordion-default-heading-3" aria-controls="accordion-default-content-4" class="govuk-accordion__section-button" aria-expanded="false">
+                    Gaps since 2006
+                  <span class="govuk-accordion__icon" aria-hidden="true"></span></button></h2>
+              </div>
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                            <p class="govuk-body">Use this section to respond to customers who completed the request every call back form.</p>
+            <strong class="tag tag--grey govuk-!-margin-bottom-4">
+              0 years can be filled
+            </strong>
+            </div>
+
+            </label>
+          </div>
+</div>
+
+          <form class="form"  action="/vnics/route" method="post">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back to start</button>
+          </form>
+
+</div>
+</div>
+
+{% endblock %}

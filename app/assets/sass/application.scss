@@ -4,3 +4,56 @@
 // 
 
 // Add extra styles here
+
+//as-is custom classes
+
+.tr-li {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-bottom: 0 !important;
+    padding: 10px 0;
+    border-top: 1px solid var(--govuk-border-colour, #cecece);
+};
+
+.border-off {
+    border: none !important;
+};
+
+.border-bottom {
+    border-bottom: 1px solid var(--govuk-border-colour, #cecece);
+};
+
+.overview-reduced-rate-election {
+    margin: 0 !important;
+    padding: 10px 0;
+    border-top: 1px solid var(--govuk-border-colour, #cecece);
+};
+
+.tag {
+    padding: 5px 8px 4px;
+    outline: 2px solid rgba(0, 0, 0, 0);
+    outline-offset: -2px;
+    color: #fff;
+    background-color: #1d70b8;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+};
+
+.tag--grey {
+    color: #484949;
+    background: #f3f3f3;
+};
+
+.tag {
+    display: inline-block;
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.tag {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.25;
+}

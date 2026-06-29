@@ -1,5 +1,6 @@
 {
-  "serviceName": "Service name goes here",
+  "serviceName": "Support for Check your State Pension forecast",
+  "useServiceNavigation": true,
   "plugins": {
     "govuk-frontend": {
       "rebrand": true
