@@ -21,7 +21,10 @@
     "body-parser": {
       "qs": "6.15.1"
     },
-    "minimatch": "^9.0.0"
+    "minimatch": "^9.0.0",
+
+    "ws": "^8.17.0",
+    "form-data": "^4.0.6"
   },
   "immutable": "^4.0.0"
 }
