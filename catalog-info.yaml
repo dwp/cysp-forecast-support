@@ -11,10 +11,10 @@ metadata:
 
   labels:
     dwp.gov.uk/version: 1.0.0
-    dwp.gov.uk/license: unknown
+    dwp.gov.uk/license: MIT
 
     dwp.gov.uk/last-verified.by: Ben Raine
-    dwp.gov.uk/last-verified.on: 2026-05-28
+    dwp.gov.uk/last-verified.on: 2026-06-29
 
     dwp.gov.uk/open-source.approved: "true"
     dwp.gov.uk/open-source.location: none
