@@ -12,7 +12,7 @@
     "govuk-frontend": "6.2.0",
     "govuk-prototype-kit": "13.20.2",
     "install": "0.13.0",
-    "npm": "11.17.0",
+    "npm": "11.18.0",
     "qs": "6.15.2"
   },
   "overrides": {
