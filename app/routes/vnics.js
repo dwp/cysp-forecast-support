@@ -34,12 +34,14 @@ router.post('/vnics/choose-option', function (req, res) {
         res.redirect ('/vnics/cope/checking-national-insurance-record')
     } else if (nino === 'LM091111A') {
         res.redirect ('/vnics/forecast-enquiry/lm091111a.html')
-    }  else if (option === 'forecast' ) {
+    } else if (nino === 'LL200101A') {
+        res.redirect ('/vnics/forecast-enquiry/LL200101A.html') 
+    } else if (option === 'forecast' ) {
         res.redirect ('/vnics/alternative-format')
     } else if (option === 'enquiry') { 
         res.redirect ('/vnics/forecast-enquiry')}
    
-});
+});  
 
 router.post('/vnics/alternative-format', function (req, res) {
 
