@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Improve state pensions details</h1>
+
+<p class="govuk-body">Your current State Pension estimate is <strong>£186.15 every week</strong>.</p>
+
+
+  <table class="govuk-table govuk-!-margin-bottom-4 govuk-!-width-two-thirds">
+              <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-0"></caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-half">Tax year gap</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric">Cost</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row" style="margin: 2em">
+                    <th scope="row" class="govuk-table__header">2019 to 2020</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric govuk-body">£780</td>
+                  </tr>
+                
+              </tbody>
+              <tfoot class="govuk-table__head">
+                <tr class="govuk-table__row" style="margin: 2em">
+                  <th scope="row" class="govuk-table__header">Total cost</th>
+                  <td class="govuk-table__cell govuk-table__cell--numeric govuk-body govuk-!-font-weight-bold">
+                    £780
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+
+            <p>This option increases your State Pension to <span class="govuk-body govuk-!-font-weight-bold">£193.04 every week.</span></p>
+            <p>This means your State Pension estimate will increase by <span class="govuk-body">£6.89 every week.</span></p>
+
+            <!-- ============ -->
+
+            <div>
+              
+                <strong class="govuk-tag govuk-tag--red govuk-!-margin-bottom-3" style="max-width: 100% !important;">
+                  This option is available until 5 April 2026
+                </strong>
+              
+            </div> 
+
+{% endblock %}

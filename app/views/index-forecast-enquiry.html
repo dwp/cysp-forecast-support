@@ -1,6 +1,8 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
 
 {% block content %}
 
@@ -12,8 +14,7 @@
       {{ serviceName }}
     </h1>
 
-    <div class="govuk-service-navigation"
-  data-module="govuk-service-navigation">
+<div class="govuk-service-navigation" data-module="govuk-service-navigation">
   <div class="govuk-width-container">
     <div class="govuk-service-navigation__container">
       <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
@@ -31,17 +32,17 @@
               <strong class="govuk-service-navigation__active-fallback">Iterations</strong>
             </a>
           </li>
-          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-            <strong class="govuk-service-navigation__link">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="/journey-data">
               Journey data
-            </strong>
+            </a>
           </li>
           <li class="govuk-service-navigation__item">
             <a class="govuk-service-navigation__link" href="/index-state-pension-forecast">
               State pension forecast
             </a>
           </li>
-          <li class="govuk-service-navigation__item">
+          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
             <a class="govuk-service-navigation__link" href="/index-forecast-enquiry">
               Forecast enquiry
             </a>
@@ -55,51 +56,44 @@
 <div class="govuk-grid-row govuk-!-margin-top-9">
   <div class="govuk-grid-column-full">
 
-    <p class="govuk-body">The following scenarios can be ran within the prototype</p>
+<table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Forecast enquiry</caption>
 
-  <p class="govuk-body"><strong>LM091111A</strong></p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>35 qualifying years</li>
-      <li>Max state pension</li>
-      <li>3 years can be filled</li>
-      <li>Gaps since 2006 - 7 years can be filled</li>
-    </ul>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Page</th>
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Details</th>
+          </tr>
+        </thead>
 
-  <p class="govuk-body"><strong>LL200101A</strong></p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>27 qualifying years</li>
-      <li>2 years can be filled</li>
-      <li>Past and future years available</li>
-      <li>Gaps since 2006 - 4 years can be filled</li>
-    </ul>
+        <tbody>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a class="govuk-link" href="" target="_blank"></a><br><p>(opens in a new tab)</p>
+            </td>
+            <td class="govuk-table__cell">July 2026</td>
+            <td class="govuk-table__cell">
 
-  <p class="govuk-body"><strong>LM100000A</strong></p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>17 qualifying years</li>
-      <li>Reduced rate election estimates split depending on martial status</li>
-    </ul>  
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a class="govuk-link" href="" target="_blank"></a><br><p>(opens in a new tab)</p>
+            </td>
+            <td class="govuk-table__cell">June 2026</td>
+            <td class="govuk-table__cell">
 
-  <p class="govuk-body"><strong>ER421111A</strong></p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Record not available</li>
-    </ul>
+            </td>
+          </tr>
 
-  <p class="govuk-body"><strong>ER471111A</strong></p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Missing cope</li>
-    </ul>
-
-  <p class="govuk-body"><strong>AA1</strong></p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Isle of man request</li>
-    </ul>
+      </tbody>
+    </table>
 
   </div>
 </div>
 
-
-
-  </div>
+</div>
 </div>
 
 {% endblock %}

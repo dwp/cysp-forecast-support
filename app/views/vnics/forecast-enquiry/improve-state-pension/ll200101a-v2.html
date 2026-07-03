@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row"> 
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+          Your voluntary contribution options
+        </h1>
+
+            <p>Your options on this page are based on you continuing to contribute National Insurance until<span class="govuk-body govuk-!-font-weight-bold"> July 2028</span>. Your options and the information on this page may change in the future.</p>
+              <p><a class="govuk-link govuk-link--no-visited-state" href="national-insurance-contributions">Change the date you intend to stop paying or getting National Insurance contributions</a></p><p></p>
+          
+          <p class="govuk-body">Your current State Pension estimate is <strong>£186.15 every week</strong>.</p>
+          <p class="govuk-body">The most you can increase your forecast to is <strong>£199.94 every week</strong>.</p>
+          
+          <h2 class="govuk-heading-l">Your options</h2>
+          <p>You have <strong>2 options</strong> to choose from. Each option has an expiry date for payment.</p>
+          <p>Your options have been sorted from the lowest total cost to the highest.</p>
+
+        <!-- ============ -->
+        
+<table class="govuk-table" data-module="moj-sortable-table" data-moj-sortable-table-init="">
+  <caption class="govuk-table__caption">Improve state pension<span class="govuk-visually-hidden"> (column headers with buttons are sortable).</span></caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="ascending"><button type="button" data-index="0">Improve to<svg width="22" height="22" focusable="false" aria-hidden="true" role="img" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.5625 15.5L11 6.63125L15.4375 15.5H6.5625Z" fill="currentColor"></path></svg></button>
+      </th>
+      <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Gaps<svg width="22" height="22" focusable="false" aria-hidden="true" role="img" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.1875 9.5L10.9609 3.95703L13.7344 9.5H8.1875Z" fill="currentColor"></path><path d="M13.7344 12.0781L10.9609 17.6211L8.1875 12.0781H13.7344Z" fill="currentColor"></path>
+      </svg></button>
+      </th>
+      <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2">Total cost<svg width="22" height="22" focusable="false" aria-hidden="true" role="img" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.1875 9.5L10.9609 3.95703L13.7344 9.5H8.1875Z" fill="currentColor"></path><path d="M13.7344 12.0781L10.9609 17.6211L8.1875 12.0781H13.7344Z" fill="currentColor"></path></svg></button></th>
+      <th scope="col" class="govuk-table__header">Details</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    
+    
+  <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="193.04">£193.04 every week <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-2">Oldest</strong></td>
+      <td class="govuk-table__cell">1</td>
+      <td class="govuk-table__cell">£780</td>
+      <td class="govuk-table__cell"><a href="">View details</a></td>
+
+    </tr><tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="199.94">£199.94 every week</td>
+      <td class="govuk-table__cell">2</td>
+      <td class="govuk-table__cell">£1,575.60</td>
+      <td class="govuk-table__cell"><a href="">View details</a></td>
+
+    </tr></tbody>
+</table>
+          
+            <!-- ============ -->
+          </div>
+
+
+      </div>
+    
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  const table = document.querySelector(
+    '[data-module="moj-sortable-table"]'
+  );
+
+  if (table) {
+    new MOJFrontend.SortableTable({
+      table: table
+    });
+  }
+
+});
+</script>
+
+{% endblock %}

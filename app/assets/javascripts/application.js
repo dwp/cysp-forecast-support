@@ -4,5 +4,25 @@
 //
 
 window.GOVUKPrototypeKit.documentReady(() => {
-  // Add JavaScript here
+
+  const table = document.querySelector(
+    '[data-module="moj-sortable-table"]'
+  )
+
+  if (
+    window.MOJFrontend &&
+    window.MOJFrontend.SortableTable &&
+    table
+  ) {
+
+    new window.MOJFrontend.SortableTable({
+      table
+    })
+
+  } else {
+
+    console.log('MOJ SortableTable not loaded')
+
+  }
+
 })

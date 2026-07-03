@@ -1,6 +1,8 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
 
 {% block content %}
 
@@ -12,7 +14,7 @@
       {{ serviceName }}
     </h1>
 
-    <div class="govuk-service-navigation" data-module="govuk-service-navigation">
+<div class="govuk-service-navigation" data-module="govuk-service-navigation">
   <div class="govuk-width-container">
     <div class="govuk-service-navigation__container">
       <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
@@ -20,27 +22,27 @@
           Menu
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
-          <li class="govuk-service-navigation__item">
-            <a class="govuk-service-navigation__link" href="index.html">
+          <li class="govuk-service-navigation__item ">
+            <a class="govuk-service-navigation__link" aria-current="true" href="index.html">
               Home
             </a>
           </li>
-          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" aria-current="true" href="iterations">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="iterations" >
               <strong class="govuk-service-navigation__active-fallback">Iterations</strong>
             </a>
           </li>
           <li class="govuk-service-navigation__item">
-            <a class="govuk-service-navigation__link" href="journey-data">
+            <a class="govuk-service-navigation__link" href="/journey-data">
               Journey data
             </a>
           </li>
-          <li class="govuk-service-navigation__item">
+          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
             <a class="govuk-service-navigation__link" href="/index-state-pension-forecast">
               State pension forecast
             </a>
           </li>
-          <li class="govuk-service-navigation__item">
+          <li class="govuk-service-navigation__item ">
             <a class="govuk-service-navigation__link" href="/index-forecast-enquiry">
               Forecast enquiry
             </a>
@@ -55,9 +57,10 @@
   <div class="govuk-grid-column-full">
 
 <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">State pension forecast</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Iteration</th>
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Page</th>
             <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
             <th scope="col" class="govuk-table__header">Details</th>
           </tr>
@@ -66,22 +69,20 @@
         <tbody>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-              <a class="govuk-link" href="/vnics/nino" target="_blank">VNICS class 2 and 3</a><br><p>(opens in a new tab)</p>
+              <a class="govuk-link" href="" target="_blank"></a><br><p>(opens in a new tab)</p>
             </td>
             <td class="govuk-table__cell">July 2026</td>
             <td class="govuk-table__cell">
-              <p class="govuk-body">This version is for testing the addition of providing class 2 and class 3 data points to agents</p>
-              <p class="govuk-body">Iteration by Alex Painter</p>
+
             </td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-              <a class="govuk-link" href="/as-is/nino" target="_blank">As is journey</a><br><p>(opens in a new tab)</p>
+              <a class="govuk-link" href="" target="_blank"></a><br><p>(opens in a new tab)</p>
             </td>
             <td class="govuk-table__cell">June 2026</td>
             <td class="govuk-table__cell">
-              <p class="govuk-body">This version is a replica of the test service, the existing prototype from 2022 can be accessed <a href="https://sfcysp-data-c47f2b033822.herokuapp.com/">here</a>.</p>
-              <p class="govuk-body">Iteration by Alex Painter</p>
+
             </td>
           </tr>
 
@@ -91,9 +92,7 @@
   </div>
 </div>
 
-
-
-  </div>
+</div>
 </div>
 
 {% endblock %}
