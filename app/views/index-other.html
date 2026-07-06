@@ -25,7 +25,7 @@
               Home
             </a>
           </li>
-          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+          <li class="govuk-service-navigation__item ">
             <a class="govuk-service-navigation__link" aria-current="true" href="iterations">
               <strong class="govuk-service-navigation__active-fallback">Iterations</strong>
             </a>
@@ -45,7 +45,7 @@
               Forecast enquiry
             </a>
           </li>
-          <li class="govuk-service-navigation__item">
+          <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
             <a class="govuk-service-navigation__link" href="/index-other">
               Others
             </a>
@@ -71,25 +71,79 @@
         <tbody>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-              <a class="govuk-link" href="/vnics/nino" target="_blank">VNICS class 2 and 3</a><br><p>(opens in a new tab)</p>
+              <a class="govuk-link" href="/vnics/nino" target="_blank">National insurance number input</a><br><p>(opens in a new tab)</p>
             </td>
-            <td class="govuk-table__cell">July 2026</td>
+            <td class="govuk-table__cell">June 2026</td>
             <td class="govuk-table__cell">
-              <p class="govuk-body">This version is for testing the addition of providing class 2 and class 3 data points to agents</p>
-              <p class="govuk-body">Iteration by Alex Painter</p>
+
             </td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-              <a class="govuk-link" href="/as-is/nino" target="_blank">As is journey</a><br><p>(opens in a new tab)</p>
+              <a class="govuk-link" href="/vnics/route" target="_blank">Forecast enquiry type routing</a><br><p>(opens in a new tab)</p>
             </td>
             <td class="govuk-table__cell">June 2026</td>
             <td class="govuk-table__cell">
-              <p class="govuk-body">This version is a replica of the test service, the existing prototype from 2022 can be accessed <a href="https://sfcysp-data-c47f2b033822.herokuapp.com/">here</a>.</p>
-              <p class="govuk-body">Iteration by Alex Painter</p>
+
             </td>
           </tr>
 
+      </tbody>
+    </table>
+
+<table class="govuk-table">
+        <thead class="govuk-table__head">
+            <caption class="govuk-table__caption govuk-table__caption--m">COPE</caption>
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Iteration</th>
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Details</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a class="govuk-link" href="/vnics/cope/checking-national-insurance-record" target="_blank">National insurance recrod is being checked</a><br><p>(opens in a new tab)</p>
+            </td>
+            <td class="govuk-table__cell">June 2026</td>
+            <td class="govuk-table__cell">
+              Scenario - ER471111A <br>
+              Missing COPE data
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <caption class="govuk-table__caption govuk-table__caption--m">Exclusions</caption>
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-third">Iteration</th>
+            <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter">Date created</th>
+            <th scope="col" class="govuk-table__header">Details</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a class="govuk-link" href="/vnics/exclusions/deceased" target="_blank">Deceased</a><br><p>(opens in a new tab)</p>
+            </td>
+            <td class="govuk-table__cell">June 2026</td>
+            <td class="govuk-table__cell">
+              Scenario - ER421111A <br>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a class="govuk-link" href="/vnics/exclusions/isle-of-man" target="_blank">Isle of man</a><br><p>(opens in a new tab)</p>
+            </td>
+            <td class="govuk-table__cell">June 2026</td>
+            <td class="govuk-table__cell">
+              Scenario - AA1 <br>
+            </td>
+          </tr>
       </tbody>
     </table>
 

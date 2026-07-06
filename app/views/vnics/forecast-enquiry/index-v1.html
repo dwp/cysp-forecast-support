@@ -1,0 +1,291 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+        
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Forecast information for {{data['nino']}}</h1>
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#overview">
+        Overview
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#national-insurance-summary">
+        National insurance summary
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#starting-amounts">
+        Starting amounts
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#gaps-since-2006">
+        Gaps since 2006
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel" id="overview">
+    <h2 class="govuk-heading-l">Overview</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      State Pension date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      11 January 2026
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Final Relevant Year (FRY)
+    </dt>
+    <dd class="govuk-summary-list__value">
+      2024 to 2025 (4 years to FRY)
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Estimate up to 5 April 2026
+    </dt>
+    <dd class="govuk-summary-list__value">
+      £138.55 every week
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Qualifying years
+    </dt>
+    <dd class="govuk-summary-list__value">
+      27
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Most they can get
+    </dt>
+    <dd class="govuk-summary-list__value">
+      £169.35 every week
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Forecast
+    </dt>
+    <dd class="govuk-summary-list__value">
+      £159.08 (4 years needed) every week
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      COPE estimate
+    </dt>
+    <dd class="govuk-summary-list__value">
+      £0
+    </dd>
+  </div>
+
+</dl>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="national-insurance-summary">
+    <h2 class="govuk-heading-l">National insurance summary</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>35 years of full contributions</li>
+      <li>1 year to contribute before 5 April 2026</li>
+      <li>4 years with gaps</li>
+      <li>3 years can be filled</li>
+    </ul>
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-2">National insurance record gaps and available voluntary contribution costs</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Tax year</th>
+          <th scope="col" class="govuk-table__header">Contribution type</th>
+          <th scope="col" class="govuk-table__header">Amount</th>
+          <th scope="col" class="govuk-table__header">Deadline</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">2025 to 2026</th>
+          <td class="govuk-table__cell" colspan="3">Your record for this year is not available yet</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">2024 to 2025</th>
+          <td class="govuk-table__cell">Class 3</td>
+          <td class="govuk-table__cell">£907.40</td>
+          <td class="govuk-table__cell">5 April 2030</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">2023 to 2024</th>
+          <td class="govuk-table__cell">Class 3</td>
+          <td class="govuk-table__cell">£907.40</td>
+          <td class="govuk-table__cell">5 April 2029</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">2022 to 2023</th>
+          <td class="govuk-table__cell">Class 3</td>
+          <td class="govuk-table__cell">£907.40</td>
+          <td class="govuk-table__cell">5 April 2028</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">Improve State Pension</button>
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="starting-amounts">
+    <h2 class="govuk-heading-l">Starting amounts</h2>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Old rules
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Basic
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £99.42 every week
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Additional Pension and Grad
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £6.45 every week
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £105.87 every week
+        </dd>
+
+      </div>
+    </dl>
+  </div>
+</div>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      New rules
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          New State Pension
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £111.18 every week
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Rebate Derived Amount (RDA)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £0
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £111.18 every week
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="gaps-since-2006">
+    <h2 class="govuk-heading-l">Gaps since 2006</h2>
+    <p class="govuk-body">Use this section to respond to customers who completed the request every call back form.</p>
+    <strong class="tag tag--grey govuk-!-margin-bottom-4">3 years can be filled</strong>
+    <table class="govuk-table govuk-!-margin-bottom-6">
+      <caption class="govuk-table__caption govuk-visually-hidden">Pre Deadline Gaps Table</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Years</th>
+          <th scope="col" class="govuk-table__header">Gaps in record</th>
+          <th scope="col" class="govuk-table__header">Total earnings factor from NIRs</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2024 to 2025</td>
+          <td class="govuk-table__cell">Full gap year</td>
+          <td class="govuk-table__cell">
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true">£</div>
+              <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2023 to 2024</td>
+          <td class="govuk-table__cell">Full gap year</td>
+          <td class="govuk-table__cell">
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true">£</div>
+              <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2022 to 2023</td>
+          <td class="govuk-table__cell">Full gap year</td>
+          <td class="govuk-table__cell">
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true">£</div>
+              <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+        <button type="submit" class="govuk-button" data-module="govuk-button" id="calculate" data-govuk-button-init="">Calculate</button>
+
+  </div>
+</div>
+
+  </div>
+</div>
+
+{% endblock %}

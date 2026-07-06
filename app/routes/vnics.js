@@ -9,7 +9,9 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
 router.post('/vnics/nino', function (req, res) {
-  const nino = req.session.data['nino']
+  
+  req.session.data.nino = req.session.data.nino?.trim().toUpperCase()
+const nino = req.session.data['nino']
 
     if (nino == 'ER421111A') {
       res.redirect ('/vnics/exclusions/deceased')
@@ -90,3 +92,14 @@ router.post('/vnics/legal-representation', function (req, res) {
         res.redirect ('/vnics/forecast-request/3rd-party-recorded') }       
 });
 
+router.post('/vnics/pre-deadline-gaps/improve-state-pension', function (req, res) {
+  const nino = req.session.data['nino']
+
+    if (nino === 'LL200101A' ) {
+        res.redirect ('/vnics/forecast-enquiry/improve-state-pension/ll200101a')
+    }  else if (nino === 'LM091111A') 
+        { res.redirect ('/vnics/forecast-enquiry/improve-state-pension/lm091111a')}
+     else {
+        //fallback if nothing is selected
+        res.redirect ('/vnics/forecast-enquiry/improve-state-pension') }       
+});
