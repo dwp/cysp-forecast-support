@@ -13,9 +13,9 @@ router.post('/vnics/nino', function (req, res) {
   req.session.data.nino = req.session.data.nino?.trim().toUpperCase()
 const nino = req.session.data['nino']
 
-    if (nino == 'ER421111A') {
+    if (nino == 'RN000007A') {
       res.redirect ('/vnics/exclusions/deceased')
-  } else if (nino === 'AA1') {
+  } else if (nino === 'RN000006A') {
         res.redirect('/vnics/exclusions/isle-of-man')
   } else {
       res.redirect ('/vnics/route')
@@ -30,14 +30,16 @@ router.post('/vnics/choose-option', function (req, res) {
         return res.render ('/vnics/route', {
         error: true
     })}    
-      if (nino === 'LM100000A') {
+      if (nino === 'RN000002A') {
         res.redirect ('/vnics/forecast-enquiry/forecast-enquiry-rre')
-    } else if (nino === 'ER471111A') {
+    } else if (nino === 'RN000004A') {
         res.redirect ('/vnics/cope/checking-national-insurance-record')
-    } else if (nino === 'LM091111A') {
-        res.redirect ('/vnics/forecast-enquiry/lm091111a.html')
-    } else if (nino === 'LL200101A') {
-        res.redirect ('/vnics/forecast-enquiry/LL200101A.html') 
+    } else if (nino === 'RN000003A') {
+        res.redirect ('/vnics/forecast-enquiry/RN000003A')
+    } else if (nino === 'RN000002A') {
+        res.redirect ('/vnics/forecast-enquiry/RN000002A')
+    } else if (nino === 'RN000001A') {
+        res.redirect ('/vnics/forecast-enquiry/RN000001A')
     } else if (option === 'forecast' ) {
         res.redirect ('/vnics/alternative-format')
     } else if (option === 'enquiry') { 
@@ -95,10 +97,10 @@ router.post('/vnics/legal-representation', function (req, res) {
 router.post('/vnics/pre-deadline-gaps/improve-state-pension', function (req, res) {
   const nino = req.session.data['nino']
 
-    if (nino === 'LL200101A' ) {
-        res.redirect ('/vnics/forecast-enquiry/improve-state-pension/ll200101a')
-    }  else if (nino === 'LM091111A') 
-        { res.redirect ('/vnics/forecast-enquiry/improve-state-pension/lm091111a')}
+    if (nino === 'RN000002A' ) {
+        res.redirect ('/vnics/forecast-enquiry/improve-state-pension/RN000002A')
+    }  else if (nino === 'RN000003A') 
+        { res.redirect ('/vnics/forecast-enquiry/improve-state-pension/RN000003A')}
      else {
         //fallback if nothing is selected
         res.redirect ('/vnics/forecast-enquiry/improve-state-pension') }       

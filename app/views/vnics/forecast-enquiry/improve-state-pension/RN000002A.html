@@ -14,26 +14,28 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-l">
-        Improving state pension for {{data['nino']}} 
+        Improving State Pension for {{data['nino']}} 
       </h1>
 
-      <strong class="tag tag--grey">2 years with gaps</strong>
+      <strong class="govuk-tag govuk-tag--grey govuk-!-margin-bottom-6">2 years with gaps</strong>
 
-      <div class="govuk-inset-text">
-        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:10px">Estimate up to April 2021</p>
-        <p class="govuk-body">£186.15 a week</p>
-      </div>
+      <p>These options are based on your continuing to contribute National Insurance until<span class="govuk-body govuk-!-font-weight-bold"> January 2028</span>. They may change in the future.</p>
+      <p><a class="govuk-link govuk-link--no-visited-state" href="/vnics/pre-deadline-gaps/still-contributing.html">Change the date they intend to stop National Insurance contributions</a></p><p></p>
+      <p class="govuk-body">Current State Pension estimate is <strong>£186.15 every week</strong>.</p>
+      <p class="govuk-body">The most they can get is <strong>£199.94 every week</strong>.</p>
+
 
     <table class="govuk-table">
     <!-- <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption> -->
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header" style="padding-right:180px">Improve to</th>
+        <th scope="col" class="govuk-table__header" style="padding-right:180px">Weekly improvement</th>
         <th scope="col" class="govuk-table__header">Gaps</th>
         <th scope="col" class="govuk-table__header">Total cost</th>
+        <th scope="col" class="govuk-table__header">Payable until</th>
       </tr>
     </thead>
 
@@ -41,9 +43,9 @@
       <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__cell">
           <details class="govuk-details" data-module="govuk-details" style="margin-bottom:5px">
-            <summary class="govuk-details__summary" style="width:400px;">
+            <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text" style="text-decoration: none;">
-                £193.04 every week <strong class="govuk-tag govuk-tag--green" id="financial-evidence-status" style="margin-left:15px">Cheapest</strong>
+                £193.04 <strong class="govuk-tag govuk-tag--green" id="financial-evidence-status" style="margin-left:15px">Cheapest</strong> <strong class="govuk-tag govuk-tag--green" id="financial-evidence-status" style="margin-left:15px">Oldest</strong> 
               </span>
             </summary>
             <div class="govuk-details__text" style="width:400px;margin-right:10px;">
@@ -55,14 +57,15 @@
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Gaps</th>
       <th scope="col" class="govuk-table__header">Cost</th>
+      <th scope="col" class="govuk-table__header">Contribution type</th>
 
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td scope="row" class="govuk-table__cell">2019 to 2020</td>
+      <td scope="row" class="govuk-table__cell">2020 to 2021</td>
       <td class="govuk-table__cell">£780</td>
-
+      <td class="govuk-table__cell">Class 3</td>
     </tr>
 
   </tbody>
@@ -73,9 +76,10 @@
 
 
           <!-- £135.61 every week <strong class="govuk-tag govuk-tag--green" id="financial-evidence-status" style="margin-left:15px">Cheapest</strong> -->
-        </td>
+
         <td class="govuk-table__cell">1</td>
         <td class="govuk-table__cell">£780</td>
+        <td class="govuk-table__cell">5 April 2027</td>
 
 
 <!-- <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">Cheapest</strong> -->
@@ -86,7 +90,7 @@
           <details class="govuk-details" data-module="govuk-details" style="margin-bottom:5px">
             <summary class="govuk-details__summary" style="width:400px;">
               <span class="govuk-details__summary-text" style="text-decoration: none;">
-                £199.94 every week
+                £199.94 <strong class="govuk-tag govuk-tag--green" id="financial-evidence-status" style="margin-left:15px">Highest</strong> 
               </span>
             </summary>
             <div class="govuk-details__text" style="width:400px;margin-right:10px;">
@@ -96,20 +100,25 @@
   <!-- <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption> -->
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Shortfalls</th>
+      <th scope="col" class="govuk-table__header">Gaps</th>
       <th scope="col" class="govuk-table__header">Cost</th>
+      <th scope="col" class="govuk-table__header">Contribution type</th>
 
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td scope="row" class="govuk-table__cell">2020 to 2021</td>
+      <td scope="row" class="govuk-table__cell">2021 to 2022</td>
       <td class="govuk-table__cell">£795.60</td>
+      <td class="govuk-table__cell">Class 3</td>
+
 
     </tr>
     <tr class="govuk-table__row">
-      <td scope="row" class="govuk-table__cell">2019 to 2020</td>
+      <td scope="row" class="govuk-table__cell">2020 to 2021</td>
       <td class="govuk-table__cell">£780</td>
+      <td class="govuk-table__cell">Class 3</td>
+
 
     </tr>
   </tbody>
@@ -124,6 +133,7 @@
         </td>
         <td class="govuk-table__cell">2</td>
         <td class="govuk-table__cell">£1,575.60</td>
+        <td class="govuk-table__cell">5 April 2027</td>
       </tr>
 </tbody>
 </table>
