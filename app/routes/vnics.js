@@ -17,6 +17,8 @@ const nino = req.session.data['nino']
       res.redirect ('/vnics/exclusions/deceased')
   } else if (nino === 'RN000006A') {
         res.redirect('/vnics/exclusions/isle-of-man')
+  } else if (nino === 'RN000005A') {
+        res.redirect('/vnics/cope/checking-national-insurance-record')
   } else {
       res.redirect ('/vnics/route')
   } 
@@ -30,9 +32,9 @@ router.post('/vnics/choose-option', function (req, res) {
         return res.render ('/vnics/route', {
         error: true
     })}    
-      if (nino === 'RN000002A') {
+      if (nino === 'RN000004A') {
         res.redirect ('/vnics/forecast-enquiry/forecast-enquiry-rre')
-    } else if (nino === 'RN000004A') {
+    } else if (nino === 'RN000007A') {
         res.redirect ('/vnics/cope/checking-national-insurance-record')
     } else if (nino === 'RN000003A') {
         res.redirect ('/vnics/forecast-enquiry/RN000003A')
