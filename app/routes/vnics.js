@@ -9,9 +9,8 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
 router.post('/vnics/nino', function (req, res) {
-  
   req.session.data.nino = req.session.data.nino?.trim().toUpperCase()
-const nino = req.session.data['nino']
+  const nino = req.session.data['nino']
 
     if (nino == 'RN000007A') {
       res.redirect ('/vnics/exclusions/deceased')
@@ -50,7 +49,6 @@ router.post('/vnics/choose-option', function (req, res) {
 });  
 
 router.post('/vnics/alternative-format', function (req, res) {
-
   const formatRequired = req.session.data['alternativeFormatRequired']
   const option = req.session.data['alternativeFormat']
 
@@ -74,7 +72,6 @@ router.post('/vnics/alternative-format', function (req, res) {
 
 router.post('/vnics/own-forecast', function (req, res) {
     const option = req.session.data['own-forecast']
-
     if (option === 'yes' ) {
         res.redirect ('/vnics/forecast-request/customer')
     }  else if (option === 'no') 
@@ -86,7 +83,6 @@ router.post('/vnics/own-forecast', function (req, res) {
 
 router.post('/vnics/legal-representation', function (req, res) {
     const option = req.session.data['inSearchlight']
-
     if (option === 'yes' ) {
         res.redirect ('/vnics/forecast-request/3rd-party-details')
     }  else if (option === 'no') 
@@ -97,13 +93,14 @@ router.post('/vnics/legal-representation', function (req, res) {
 });
 
 router.post('/vnics/pre-deadline-gaps/improve-state-pension', function (req, res) {
-  const nino = req.session.data['nino']
-
+    const nino = req.session.data['nino']
     if (nino === 'RN000002A' ) {
         res.redirect ('/vnics/forecast-enquiry/improve-state-pension/RN000002A')
-    }  else if (nino === 'RN000003A') 
+    }  else if (nino === 'RN000003A') {
         { res.redirect ('/vnics/forecast-enquiry/improve-state-pension/RN000003A')}
-     else {
+    } else if (nino === 'RN000001A' ) {
+        res.redirect ('/vnics/forecast-enquiry/improve-state-pension/RN000001A')
+    } else {
         //fallback if nothing is selected
         res.redirect ('/vnics/forecast-enquiry/improve-state-pension') }       
 });
