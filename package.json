@@ -26,6 +26,6 @@
     "body-parser": {
       "qs": "6.15.1"
     },
-    "minimatch": "9.0.0"
+    "minimatch": "9.0.9"
   }
 }
