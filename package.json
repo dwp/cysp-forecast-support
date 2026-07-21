@@ -23,7 +23,6 @@
     "brace-expansion": "^1.1.16",
     "express": {
       "qs": "6.15.2"
-      
     },
     "body-parser": {
       "qs": "6.15.1"
