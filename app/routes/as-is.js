@@ -86,3 +86,14 @@ router.post('/as-is/legal-representation', function (req, res) {
         res.redirect ('/as-is/forecast-request/3rd-party-recorded') }       
 });
 
+router.post('/as-is/forecast-request/customer', function (req, res) {
+    const nino = req.session.data['nino']
+
+    if (nino === 'RN000004A' ) {
+        res.redirect ('/as-is/forecast-request/marital-status')
+    }  else {
+        //fallback if nothing is selected
+        res.redirect ('/as-is/forecast-request/postcode') }       
+});
+
+
