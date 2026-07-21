@@ -20,8 +20,10 @@
     "ws": "8.21.0",
     "form-data": "2.5.6",
     "qs": "6.15.2",
+    "brace-expansion": "^1.1.16",
     "express": {
       "qs": "6.15.2"
+      
     },
     "body-parser": {
       "qs": "6.15.1"
