@@ -42,7 +42,11 @@ router.post('/vnics/choose-option', function (req, res) {
     } else if (nino === 'RN000001A') {
         res.redirect ('/vnics/forecast-enquiry/RN000001A') 
     } else if (nino === 'RN000008A') {
-        res.redirect ('/vnics/forecast-enquiry/RN000008A') 
+        res.redirect ('/vnics/forecast-enquiry/RN000008A')
+    } else if (nino === 'RN000009A') {
+        res.redirect ('/vnics/forecast-enquiry/RN000009A')
+    } else if (nino === 'RN0000010A') {
+        res.redirect ('/vnics/forecast-enquiry/RN0000010A')   
     } else if (option === 'forecast' ) {
         res.redirect ('/vnics/alternative-format')
     } else if (option === 'enquiry') { 
