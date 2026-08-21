@@ -4,3 +4,4 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 require('./routes/as-is')
 require('./routes/vnics')
+require('./routes/vnics-v2')
