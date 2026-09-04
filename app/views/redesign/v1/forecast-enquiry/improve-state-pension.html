@@ -1,0 +1,190 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+SFCYSP Forecast enquiry – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include '../includes/_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+        
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Forecast information for {{ data.person.personalDetails.NINO }}</h1>
+
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="overview">Overview</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="national-insurance">National insurance summary</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="improve-state-pension">Improve State Pension</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="starting-amounts">Starting amounts</a>
+          </li>
+        </ul>
+      </nav>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-6">Improve State Pension</h2>
+
+  <!-- <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Pension details
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          When they will stop paying National Insurance
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.person.personalDetails.statePensionDate.split(' ').slice(1).join(' ') }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+        <dt class="govuk-summary-list__key">
+          Current State Pension Estimate
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.person.personalDetails.estimateTo }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+        <dt class="govuk-summary-list__key">
+          The most they can increase their forecast to	
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {% for option in data.person.paymentOptions %}
+            {% if option.tag == "Most impactful" %}
+            {{ option.forecast }}
+            {% endif %}
+            {% endfor %}        
+          </dd>
+      </div>
+    </dl>
+  </div>
+</div> -->
+
+       <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">
+              When they will stop paying National Insurance
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data.stopDate %}
+                {{ data.stopDate }}
+              {% else %}
+                {{ data.person.personalDetails.statePensionDate.split(' ').slice(1).join(' ') }}
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="national-insurance-contributions">Change<span class="govuk-visually-hidden"> when they will stop paying national insurance?</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+            <dt class="govuk-summary-list__key">
+              Current State Pension
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data.person.personalDetails.estimateTo }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+            <dt class="govuk-summary-list__key">
+              The most they can get is
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% for option in data.person.paymentOptions %}
+              {% if option.tag == "Most impactful" %}
+              {{ option.forecast }}
+              {% endif %}
+              {% endfor %}
+            </dd>
+          </div>
+        </dl> 
+
+</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s ">{{ data.person.nationalInsuranceSummary.length }} years with payable gaps</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Tax years</th>
+      <th scope="col" class="govuk-table__header">Improve to</th>
+      <th scope="col" class="govuk-table__header">Increase</th>
+      <th scope="col" class="govuk-table__header">Total cost</th>
+      <th scope="col" class="govuk-table__header">Payable until</th>
+      <th scope="col" class="govuk-table__header">Payment option</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    {% for option in data.person.paymentOptions %}
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+      {% for gap in option.gaps %}
+      {{ gap.taxYear }}<br>
+      {% endfor %}
+      </th>
+      <td class="govuk-table__cell">
+        {{ option.forecast }} a week
+        {% if option.tag %}
+          <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-2">
+            {{ option.tag }}
+          </strong>
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell">
+        {{ option.extraWeekly }} a week
+      </td>
+      <td class="govuk-table__cell">
+        {{ option.totalCost }}
+      </td>
+      <td class="govuk-table__cell">
+        {{ option.payableUntil }}
+      </td>
+      <td class="govuk-table__cell">
+        <a href="improve-state-pension-details?option={{option.optionNumber}}">Option {{ option.optionNumber }} </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+  </div>
+</div>
+
+
+{% endblock %}

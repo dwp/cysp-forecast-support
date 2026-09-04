@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Person data</h1>
+
+<h2 class="govuk-heading-m">Personal details</h2>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">NINO</dt>
+    <dd class="govuk-summary-list__value">{{ data.person.personalDetails.NINO }}</dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">State Pension date</dt>
+    <dd class="govuk-summary-list__value">{{ data.person.personalDetails.statePensionDate }}</dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Qualifying years</dt>
+    <dd class="govuk-summary-list__value">{{ data.person.personalDetails.qualifyingYears }}</dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Forecast</dt>
+    <dd class="govuk-summary-list__value">{{ data.person.personalDetails.forecast }}</dd>
+  </div>
+</dl>
+
+<h2 class="govuk-heading-m">National Insurance summary</h2>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header">Tax year</th>
+      <th class="govuk-table__header">Class</th>
+      <th class="govuk-table__header">Amount</th>
+      <th class="govuk-table__header">Payable until</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% for year in data.person.nationalInsuranceSummary %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{ year.taxYear }}</td>
+      <td class="govuk-table__cell">{{ year.class }}</td>
+      <td class="govuk-table__cell">{{ year.Amount }}</td>
+      <td class="govuk-table__cell">{{ year.payableUntil }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2 class="govuk-heading-m">Raw JSON</h2>
+
+<pre style="background:#f3f2f1;padding:20px;overflow:auto;">
+{{ data.person | dump }}
+</pre>
+
+<h2 class="govuk-heading-m">Session data</h2>
+
+<pre style="background:#f3f2f1;padding:20px;overflow:auto;">
+{{ data | dump }}
+</pre>
+
+{% endblock %}

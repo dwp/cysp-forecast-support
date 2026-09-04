@@ -1,0 +1,134 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFCYSP Forecast enquiry – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include '../includes/_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+       <h1 class="govuk-heading-l">Forecast information for {{ data.person.personalDetails.NINO }} </h1> 
+
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link"  href="overview">Overview</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="national-insurance">National insurance summary</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="improve-state-pension">Improve State Pension</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="starting-amounts">Starting amounts</a>
+          </li>
+        </ul>
+      </nav>
+    
+</div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-6">Starting amounts</h2>
+      
+        <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h3 class="govuk-summary-card__title">
+      Old rules
+    </h3>
+  </div>
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Basic
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.person.startingAmounts.oldRulesBasic }}
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Additional and graduated retirement benefit (GRB)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.person.startingAmounts.oldRulesAdditional }}
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.person.startingAmounts.oldRulesTotal }}
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h3 class="govuk-summary-card__title">
+      New rules
+    </h3>
+  </div>
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          New State Pension
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.person.startingAmounts.newRulesNewStatePension }}
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Less Rebate Derived Amount (RDA)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.person.startingAmounts.newRulesRDA }}
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.person.startingAmounts.newRulesTotal }}
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+    </div>
+</div>
+
+
+{% endblock %}

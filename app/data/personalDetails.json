@@ -1,0 +1,890 @@
+{
+    "RN000001A": {
+        "personalDetails":{
+            "NINO": "RN000001A",
+            "statePensionDate": "25 March 2031",
+            "FRY": "2033 to 2034 (7 years to FRY)",
+            "estimateTo": "£186.14",
+            "qualifyingYears": "27",
+            "mostTheyCanGet": "£241.30",
+            "forecast": "£241.30",
+            "forecastYearsNeeded": "7 years",
+            "COPE": "£0"
+        },
+        "nationalInsuranceSummary": [
+            {
+                "taxYear": "2023 to 2024",
+                "class": "2",
+                "Amount": "£26.85",
+                "payableUntil": "5 April 2030"
+            },
+            {
+                "taxYear": "2022 to 2023",
+                "class": "2 and 3",
+                "Amount": "£485",
+                "payableUntil": "5 April 2029"
+            },
+            {
+                "taxYear": "2020 to 2021",
+                "class": "3",
+                "Amount": "£652",
+                "payableUntil": "5 April 2027"
+            }
+        ],
+        "startingAmounts": {
+            "oldRulesBasic": "£99.42",
+            "oldRulesAdditional": "£6.45",
+            "oldRulesTotal": "£105.87",
+            "newRulesNewStatePension": "£111.18",
+            "newRulesRDA": "£0",
+            "newRulesTotal": "£111.18"
+        },
+    "paymentOptions": [
+      {
+        "optionNumber": 1,
+        "tag": "Cheapest",
+        "forecast": "£193.04",
+        "extraWeekly": "£6.89",
+        "extraYearly": "£358.28",
+        "yearsAdded": 1,
+        "totalCost": "£26.85",
+        "payableUntil": "5 April 2030",
+        "gaps": [
+          {
+            "taxYear": "2023 to 2024",
+            "cost": "£26.85",
+            "class": "2"
+          }
+        ]
+      },
+      {
+        "optionNumber": 2,
+        "tag": "Oldest",
+        "forecast": "£193.04",
+        "extraWeekly": "£6.89",
+        "extraYearly": "£358.28",
+        "yearsAdded": 1,
+        "totalCost": "£652",
+        "payableUntil": "5 April 2027",
+        "gaps": [
+          {
+            "taxYear": "2020 to 2021",
+            "cost": "£652",
+            "class": "3"
+          }
+        ]
+      },
+      {
+        "optionNumber": 3,
+        "forecast": "£199.94",
+        "extraWeekly": "£13.79",
+        "extraYearly": "£717.08",
+        "yearsAdded": 2,
+        "totalCost": "£511.85",
+        "payableUntil": "5 April 2029",
+        "gaps": [
+          {
+            "taxYear": "2023 to 2024",
+            "cost": "£26.85",
+            "class": "2"
+          },
+          {
+            "taxYear": "2022 to 2023",
+            "cost": "£485",
+            "class": "2 and 3"
+          }
+        ]
+      },
+      {
+        "optionNumber": 4,
+        "tag": "Most impactful",
+        "forecast": "£206.84",
+        "extraWeekly": "£20.69",
+        "extraYearly": "£1075.88",
+        "yearsAdded": 3,
+        "totalCost": "£1163.85",
+        "payableUntil": "5 April 2027",
+        "gaps": [
+          {
+            "taxYear": "2023 to 2024",
+            "cost": "£26.85",
+            "class": "2"
+          },
+          {
+            "taxYear": "2022 to 2023",
+            "cost": "£485",
+            "class": "2 and 3"
+          },
+          {
+            "taxYear": "2020 to 2021",
+            "cost": "£652",
+            "class": "3"
+          }
+        ]
+      }
+    ]   
+    },
+
+    "RN000002A": {
+  "personalDetails": {
+    "NINO": "RN000002A",
+    "statePensionDate": "11 January 2028",
+    "FRY": "2027 to 2028 (2 years to FRY)",
+    "estimateTo": "£138.55",
+    "qualifyingYears": "27",
+    "mostTheyCanGet": "£169.35",
+    "forecast": "£159.08",
+    "forecastYearsNeeded": "4 years",
+    "COPE": "£0"
+  },
+
+  "nationalInsuranceSummary": [
+    {
+      "taxYear": "2021 to 2022",
+      "class": "3",
+      "Amount": "£795.60",
+      "payableUntil": "5 April 2028"
+    },
+    {
+      "taxYear": "2020 to 2021",
+      "class": "3",
+      "Amount": "£780",
+      "payableUntil": "5 April 2027"
+    }
+  ],
+
+  "startingAmounts": {
+    "oldRulesBasic": "£99.42",
+    "oldRulesAdditional": "£6.45",
+    "oldRulesTotal": "£105.87",
+    "newRulesNewStatePension": "£111.18",
+    "newRulesRDA": "£0",
+    "newRulesTotal": "£111.18"
+  },
+
+  "paymentOptions": [
+    {
+      "optionNumber": 1,
+      "tag": "Cheapest, Oldest",
+      "forecast": "£193.04",
+      "extraWeekly": "£6.89",
+      "extraYearly": "£358.28",
+      "yearsAdded": 1,
+      "totalCost": "£780",
+      "payableUntil": "5 April 2027",
+      "gaps": [
+        {
+          "taxYear": "2020 to 2021",
+          "cost": "£780",
+          "class": "3"
+        }
+      ]
+    },
+    {
+      "optionNumber": 2,
+      "tag": "Highest",
+      "forecast": "£199.94",
+      "extraWeekly": "£13.79",
+      "extraYearly": "£717.08",
+      "yearsAdded": 2,
+      "totalCost": "£1,575.60",
+      "payableUntil": "5 April 2027",
+      "gaps": [
+        {
+          "taxYear": "2021 to 2022",
+          "cost": "£795.60",
+          "class": "3"
+        },
+        {
+          "taxYear": "2020 to 2021",
+          "cost": "£780",
+          "class": "3"
+        }
+      ]
+    }
+  ]
+},
+"RN000003A": {
+  "personalDetails": {
+    "NINO": "RN000003A",
+    "statePensionDate": "1 November 2026",
+    "FRY": "2025-26 (1 year to FRY)",
+    "estimateTo": "£241.30",
+    "qualifyingYears": "35",
+    "mostTheyCanGet": "£241.30",
+    "forecast": "£241.30",
+    "forecastYearsNeeded": "1 year",
+    "COPE": "£2.55"
+  },
+
+  "nationalInsuranceSummary": [
+    {
+      "taxYear": "2024 to 2025",
+      "class": "3",
+      "Amount": "£907.40",
+      "payableUntil": "5 April 2030"
+    },
+    {
+      "taxYear": "2023 to 2024",
+      "class": "3",
+      "Amount": "£907.40",
+      "payableUntil": "5 April 2029"
+    },
+    {
+      "taxYear": "2022 to 2023",
+      "class": "3",
+      "Amount": "£907.40",
+      "payableUntil": "5 April 2028"
+    }
+  ],
+
+  "startingAmounts": {
+    "oldRulesBasic": "£119.30",
+    "oldRulesAdditional": "£29.21",
+    "oldRulesTotal": "£148.51",
+    "newRulesNewStatePension": "£137.86",
+    "newRulesRDA": "£2.55",
+    "newRulesTotal": "£135.31"
+  },
+
+  "paymentOptions": []
+},
+"RN000004A": {
+  "journey": "forecast-enquiry/forecast-enquiry-rre",
+
+  "personalDetails": {
+    "NINO": "RN000004A",
+    "statePensionDate": "1 November 2052",
+    "FRY": "2051-52 (29 years to FRY)",
+    "estimateTo": "£83.73",
+    "qualifyingYears": "17",
+    "mostTheyCanGet": null,
+    "forecast": null,
+    "forecastYearsNeeded": null,
+    "COPE": "£0.00",
+    "reducedRateElection": {
+      "marriedOrCivilPartnership": "£134.10",
+      "widowedOrDivorced": "£208.20"
+    }
+  },
+
+  "nationalInsuranceSummary": [],
+
+  "startingAmounts": {},
+
+  "paymentOptions": []
+},
+
+  "RN000005A": {
+    "journey": "cope/checking-national-insurance-record",
+    "personalDetails": {
+      "NINO": "RN000005A"
+    }
+  },
+  "RN000006A": {
+    "journey": "exclusions/isle-of-man",
+    "personalDetails": {
+      "NINO": "RN000006A"
+    }
+  },
+    "RN000007A": {
+    "journey": "exclusions/deceased",
+    "personalDetails": {
+      "NINO": "RN000007A"
+    }
+  },
+"RN000008A": {
+  "personalDetails": {
+    "NINO": "RN000008A",
+    "statePensionDate": "25 March 2034",
+    "FRY": "2033 to 2034 (7 years to FRY)",
+    "estimateTo": "£186.14",
+    "qualifyingYears": "27",
+    "mostTheyCanGet": "£241.30",
+    "forecast": "£241.30",
+    "forecastYearsNeeded": "7 years",
+    "COPE": "£0"
+  },
+
+  "nationalInsuranceSummary": [
+    {
+      "taxYear": "2023 to 2024",
+      "class": "2",
+      "Amount": "£26.85",
+      "payableUntil": "5 April 2030"
+    },
+    {
+      "taxYear": "2022 to 2023",
+      "class": "2",
+      "Amount": "£85",
+      "payableUntil": "5 April 2029"
+    },
+    {
+      "taxYear": "2020 to 2021",
+      "class": "2",
+      "Amount": "£170",
+      "payableUntil": "5 April 2027"
+    }
+  ],
+
+  "startingAmounts": {
+    "oldRulesBasic": "£99.42",
+    "oldRulesAdditional": "£6.45",
+    "oldRulesTotal": "£105.87",
+    "newRulesNewStatePension": "£111.18",
+    "newRulesRDA": "£0",
+    "newRulesTotal": "£111.18"
+  },
+
+  "paymentOptions": [
+    {
+      "optionNumber": 1,
+      "tag": "Cheapest",
+      "forecast": "£193.04",
+      "extraWeekly": "£6.89",
+      "extraYearly": "£358.28",
+      "yearsAdded": 1,
+      "totalCost": "£26.85",
+      "payableUntil": "5 April 2030",
+      "gaps": [
+        {
+          "taxYear": "2023 to 2024",
+          "cost": "£26.85",
+          "class": "2"
+        }
+      ]
+    },
+
+    {
+      "optionNumber": 2,
+      "forecast": "£199.94",
+      "extraWeekly": "£13.79",
+      "extraYearly": "£717.08",
+      "yearsAdded": 2,
+      "totalCost": "£111.85",
+      "payableUntil": "5 April 2029",
+      "gaps": [
+        {
+          "taxYear": "2023 to 2024",
+          "cost": "£26.85",
+          "class": "2"
+        },
+        {
+          "taxYear": "2022 to 2023",
+          "cost": "£85",
+          "class": "2"
+        }
+      ]
+    },
+
+    {
+      "optionNumber": 3,
+      "tag": "Most impactful",
+      "forecast": "£206.84",
+      "extraWeekly": "£20.68",
+      "extraYearly": "£107536",
+      "yearsAdded": 3,
+      "totalCost": "£281.85",
+      "payableUntil": "5 April 2027",
+      "gaps": [
+        {
+          "taxYear": "2023 to 2024",
+          "cost": "£26.85",
+          "class": "2"
+        },
+        {
+          "taxYear": "2022 to 2023",
+          "cost": "£85",
+          "class": "2"
+        },
+        {
+          "taxYear": "2020 to 2021",
+          "cost": "£170",
+          "class": "2"
+        }
+      ]
+    }
+  ]
+},
+
+"RN000009A": {
+  "personalDetails": {
+    "NINO": "RN000009A",
+    "statePensionDate": "25 March 2034",
+    "FRY": "2033 to 2034 (7 years to FRY)",
+    "estimateTo": "£98.68",
+    "qualifyingYears": "27",
+    "mostTheyCanGet": "£241.30",
+    "forecast": "£241.30",
+    "forecastYearsNeeded": "7 years",
+    "COPE": "£0"
+  },
+
+  "nationalInsuranceSummary": [
+    {
+      "taxYear": "2023 to 2024",
+      "class": "2",
+      "Amount": "£182",
+      "payableUntil": "5 April 2028"
+    },
+    {
+      "taxYear": "2022 to 2023",
+      "class": "2",
+      "Amount": "£150",
+      "payableUntil": "5 April 2028"
+    },
+    {
+      "taxYear": "2019 to 2020",
+      "class": "2",
+      "Amount": "£153.40",
+      "payableUntil": "5 April 2028"
+    },
+    {
+      "taxYear": "2018 to 2019",
+      "class": "2",
+      "Amount": "£148.20",
+      "payableUntil": "5 April 2028"
+    },
+    {
+      "taxYear": "2017 to 2018",
+      "class": "2",
+      "Amount": "£145.60",
+      "payableUntil": "5 April 2028"
+    }
+  ],
+
+  "startingAmounts": {
+    "oldRulesBasic": "£99.42",
+    "oldRulesAdditional": "£6.45",
+    "oldRulesTotal": "£105.87",
+    "newRulesNewStatePension": "£111.18",
+    "newRulesRDA": "£0",
+    "newRulesTotal": "£111.18"
+  },
+
+  "paymentOptions": [
+    {
+      "optionNumber": 1,
+      "tag": "Cheapest",
+      "forecast": "£105.26",
+      "extraWeekly": "£6.89",
+      "extraYearly": "£358.28",
+      "yearsAdded": 1,
+      "totalCost": "£145.60",
+      "payableUntil": "5 April 2028",
+      "gaps": [
+        {
+          "taxYear": "2017 to 2018",
+          "cost": "£145.60",
+          "class": "2"
+        }
+      ]
+    },
+    {
+      "optionNumber": 2,
+      "forecast": "£111.84",
+      "extraWeekly": "£13.79",
+      "extraYearly": "£717.08",
+      "yearsAdded": 2,
+      "totalCost": "£293.80",
+      "payableUntil": "5 April 2028",
+      "gaps": [
+        {
+          "taxYear": "2018 to 2019",
+          "cost": "£148.20",
+          "class": "2"
+        },
+        {
+          "taxYear": "2017 to 2018",
+          "cost": "£145.60",
+          "class": "2"
+        }
+      ]
+    },
+    {
+      "optionNumber": 3,
+      "forecast": "£118.42",
+      "extraWeekly": "£20.69",
+      "extraYearly": "£1075.36",
+      "yearsAdded": 3,
+      "totalCost": "£443.80",
+      "payableUntil": "5 April 2028",
+      "gaps": [
+        {
+          "taxYear": "2022 to 2023",
+          "cost": "£150",
+          "class": "2"
+        },
+        {
+          "taxYear": "2018 to 2019",
+          "cost": "£148.20",
+          "class": "2"
+        },
+        {
+          "taxYear": "2017 to 2018",
+          "cost": "£145.60",
+          "class": "2"
+        }
+      ]
+    },
+    {
+      "optionNumber": 4,
+      "forecast": "£125",
+      "extraWeekly": "£27.58",
+      "extraYearly": "£1,434.16",
+      "yearsAdded": 4,
+      "totalCost": "£597.20",
+      "payableUntil": "5 April 2028",
+      "gaps": [
+        {
+          "taxYear": "2022 to 2023",
+          "cost": "£150",
+          "class": "2"
+        },
+        {
+          "taxYear": "2019 to 2020",
+          "cost": "£153.40",
+          "class": "2"
+        },
+        {
+          "taxYear": "2018 to 2019",
+          "cost": "£148.20",
+          "class": "2"
+        },
+        {
+          "taxYear": "2017 to 2018",
+          "cost": "£145.60",
+          "class": "2"
+        }
+      ]
+    },
+    {
+      "optionNumber": 5,
+      "tag": "Most impactful",
+      "forecast": "£131.58",
+      "extraWeekly": "£34.47",
+      "extraYearly": "£1,792.44",
+      "yearsAdded": 5,
+      "totalCost": "£779.20",
+      "payableUntil": "5 April 2028",
+      "gaps": [
+        {
+          "taxYear": "2023 to 2024",
+          "cost": "£182",
+          "class": "2"
+        },
+        {
+          "taxYear": "2022 to 2023",
+          "cost": "£150",
+          "class": "2"
+        },
+        {
+          "taxYear": "2019 to 2020",
+          "cost": "£153.40",
+          "class": "2"
+        },
+        {
+          "taxYear": "2018 to 2019",
+          "cost": "£148.20",
+          "class": "2"
+        },
+        {
+          "taxYear": "2017 to 2018",
+          "cost": "£145.60",
+          "class": "2"
+        }
+      ]
+    }
+  ]
+},
+  "RN0000010A": {
+  "personalDetails": {
+    "NINO": "RN0000010A",
+    "statePensionDate": "25 March 2034",
+    "FRY": "2033 to 2034 (7 years to FRY)",
+    "estimateTo": "£98.68",
+    "qualifyingYears": "27",
+    "mostTheyCanGet": "£241.30",
+    "forecast": "£241.30",
+    "forecastYearsNeeded": "7 years",
+    "COPE": "£0"
+  },
+
+  "nationalInsuranceSummary": [
+    {
+      "taxYear": "2024 to 2025",
+      "class": "2",
+      "Amount": "£120",
+      "payableUntil": "5 April 2031"
+    },
+    {
+      "taxYear": "2023 to 2024",
+      "class": "2",
+      "Amount": "£182.54",
+      "payableUntil": "5 April 2030"
+    },
+    {
+      "taxYear": "2022 to 2023",
+      "class": "2",
+      "Amount": "£150",
+      "payableUntil": "5 April 2029"
+    },
+    {
+      "taxYear": "2020 to 2021",
+      "class": "2",
+      "Amount": "£76.48",
+      "payableUntil": "5 April 2028"
+    },
+    {
+      "taxYear": "2017 to 2018",
+      "class": "2",
+      "Amount": "£145.60",
+      "payableUntil": "5 April 2028"
+    },
+    {
+      "taxYear": "2016 to 2017",
+      "class": "2",
+      "Amount": "£25.60",
+      "payableUntil": "5 April 2028"
+    },
+    {
+      "taxYear": "2015 to 2016",
+      "class": "2",
+      "Amount": "£130",
+      "payableUntil": "5 April 2028"
+    }
+  ],
+
+  "startingAmounts": {
+    "oldRulesBasic": "£99.42",
+    "oldRulesAdditional": "£6.45",
+    "oldRulesTotal": "£105.87",
+    "newRulesNewStatePension": "£111.18",
+    "newRulesRDA": "£0",
+    "newRulesTotal": "£111.18"
+  },
+
+  "paymentOptions": [
+    {
+      "optionNumber": 1,
+      "tag": "Cheapest",
+      "forecast": "£105.26",
+      "extraWeekly": "£6.89",
+      "extraYearly": "£358.28",
+      "yearsAdded": 1,
+      "totalCost": "£25.60",
+      "payableUntil": "5 April 2028",
+      "gaps": [
+        {
+          "taxYear": "2016 to 2017",
+          "cost": "£25.60",
+          "class": "2"
+        }
+      ]
+    },
+    {
+      "optionNumber": 2,
+      "forecast": "£111.84",
+      "extraWeekly": "£13.79",
+      "extraYearly": "£717.08",
+      "yearsAdded": 2,
+      "totalCost": "£102.08",
+      "payableUntil": "5 April 2028",
+      "gaps": [
+        {
+          "taxYear": "2020 to 2021",
+          "cost": "£76.48",
+          "class": "2"
+        },
+        {
+          "taxYear": "2016 to 2017",
+          "cost": "£25.60",
+          "class": "2"
+        }
+      ]
+    },
+    {
+      "optionNumber": 3,
+      "forecast": "£118.42",
+      "extraWeekly": "£20.68",
+      "extraYearly": "£1075.36",
+      "yearsAdded": 3,
+      "totalCost": "£222.08",
+      "payableUntil": "5 April 2028",
+      "gaps": [
+        {
+          "taxYear": "2024 to 2025",
+          "cost": "£120",
+          "class": "2"
+        },
+        {
+          "taxYear": "2020 to 2021",
+          "cost": "£76.48",
+          "class": "2"
+        },
+        {
+          "taxYear": "2016 to 2017",
+          "cost": "£25.60",
+          "class": "2"
+        }
+      ]
+    },
+    {
+      "optionNumber": 4,
+      "forecast": "£125",
+      "extraWeekly": "£27.58",
+      "extraYearly": "£1,434.16",
+      "yearsAdded": 4,
+      "totalCost": "£352.08",
+      "payableUntil": "5 April 2028",
+      "gaps": [
+        {
+          "taxYear": "2024 to 2025",
+          "cost": "£120",
+          "class": "2"
+        },
+        {
+          "taxYear": "2020 to 2021",
+          "cost": "£76.48",
+          "class": "2"
+        },
+        {
+          "taxYear": "2016 to 2017",
+          "cost": "£25.60",
+          "class": "2"
+        },
+        {
+          "taxYear": "2015 to 2016",
+          "cost": "£130",
+          "class": "2"
+        }
+      ]
+    },
+    {
+      "optionNumber": 5,
+      "forecast": "£131.58",
+      "extraWeekly": "£34.47",
+      "extraYearly": "£1792.44",
+      "yearsAdded": 5,
+      "totalCost": "£497.68",
+      "payableUntil": "5 April 2028",
+      "gaps": [
+        {
+          "taxYear": "2024 to 2025",
+          "cost": "£120",
+          "class": "2"
+        },
+        {
+          "taxYear": "2020 to 2021",
+          "cost": "£76.48",
+          "class": "2"
+        },
+        {
+          "taxYear": "2017 to 2018",
+          "cost": "£145.60",
+          "class": "2"
+        },
+        {
+          "taxYear": "2016 to 2017",
+          "cost": "£25.60",
+          "class": "2"
+        },
+        {
+          "taxYear": "2015 to 2016",
+          "cost": "£130",
+          "class": "2"
+        }
+      ]
+    },
+    {
+      "optionNumber": 6,
+      "forecast": "£138.47",
+      "extraWeekly": "£41.37",
+      "extraYearly": "£2,151.24",
+      "yearsAdded": 6,
+      "totalCost": "£647.68",
+      "payableUntil": "5 April 2028",
+      "gaps": [
+        {
+          "taxYear": "2024 to 2025",
+          "cost": "£120",
+          "class": "2"
+        },
+        {
+          "taxYear": "2022 to 2023",
+          "cost": "£150",
+          "class": "2"
+        },
+        {
+          "taxYear": "2020 to 2021",
+          "cost": "£76.48",
+          "class": "2"
+        },
+        {
+          "taxYear": "2017 to 2018",
+          "cost": "£145.60",
+          "class": "2"
+        },
+        {
+          "taxYear": "2016 to 2017",
+          "cost": "£25.60",
+          "class": "2"
+        },
+        {
+          "taxYear": "2015 to 2016",
+          "cost": "£130",
+          "class": "2"
+        }
+      ]
+    },
+    {
+      "optionNumber": 7,
+      "tag": "Most impactful",
+      "forecast": "£145.36",
+      "extraWeekly": "£48.26",
+      "extraYearly": "£2509.52",
+      "yearsAdded": 7,
+      "totalCost": "£830.22",
+      "payableUntil": "5 April 2028",
+      "gaps": [
+        {
+          "taxYear": "2024 to 2025",
+          "cost": "£120",
+          "class": "2"
+        },
+        {
+          "taxYear": "2023 to 2024",
+          "cost": "£182.54",
+          "class": "2"
+        },
+        {
+          "taxYear": "2022 to 2023",
+          "cost": "£150",
+          "class": "2"
+        },
+        {
+          "taxYear": "2020 to 2021",
+          "cost": "£76.48",
+          "class": "2"
+        },
+        {
+          "taxYear": "2017 to 2018",
+          "cost": "£145.60",
+          "class": "2"
+        },
+        {
+          "taxYear": "2016 to 2017",
+          "cost": "£25.60",
+          "class": "2"
+        },
+        {
+          "taxYear": "2015 to 2016",
+          "cost": "£130",
+          "class": "2"
+        }
+      ]
+    }
+  ]
+}
+
+}

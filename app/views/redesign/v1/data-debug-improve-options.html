@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Payment options debug
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">
+  Payment options debug
+</h1>
+
+<p class="govuk-body">
+  NINO: {{ data.person.personalDetails.NINO }}
+</p>
+
+<p class="govuk-body">
+  Number of options: {{ data.person.paymentOptions.length }}
+</p>
+
+{% for option in data.person.paymentOptions %}
+
+  <h2 class="govuk-heading-m">
+    Option {{ option.optionNumber }}
+    {% if option.tag %}
+      - {{ option.tag }}
+    {% endif %}
+  </h2>
+
+  <dl class="govuk-summary-list">
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Forecast</dt>
+      <dd class="govuk-summary-list__value">{{ option.forecast }}</dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Extra weekly</dt>
+      <dd class="govuk-summary-list__value">{{ option.extraWeekly }}</dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Extra yearly</dt>
+      <dd class="govuk-summary-list__value">{{ option.extraYearly }}</dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Years added</dt>
+      <dd class="govuk-summary-list__value">{{ option.yearsAdded }}</dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Total cost</dt>
+      <dd class="govuk-summary-list__value">{{ option.totalCost }}</dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Payable until</dt>
+      <dd class="govuk-summary-list__value">{{ option.payableUntil }}</dd>
+    </div>
+
+  </dl>
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--s">
+      Included tax years
+    </caption>
+
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header">Tax year</th>
+        <th class="govuk-table__header">Cost</th>
+        <th class="govuk-table__header">Class</th>
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+
+      {% for gap in option.gaps %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{ gap.taxYear }}</td>
+        <td class="govuk-table__cell">{{ gap.cost }}</td>
+        <td class="govuk-table__cell">{{ gap.class }}</td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+{% endfor %}
+
+{% endblock %}

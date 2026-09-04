@@ -1,0 +1,155 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+When will they stop paying National Insurance?
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include '../includes/_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back to record",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" action="/redesign/v1/forecast-enquiry/change-stop-contributions" novalidate>
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              When will they stop paying National Insurance or receiving National Insurance credits?
+            </h1>
+          </legend>
+
+          <p class="govuk-body">
+            This will help calculate their forecasted State Pension.
+          </p>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="spa"
+                name="niStopScenario"
+                type="radio"
+                value="spa">
+
+              <label class="govuk-label govuk-radios__label" for="spa">
+                When they reach State Pension age
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="before-spa"
+                name="niStopScenario"
+                type="radio"
+                value="before-spa"
+                data-aria-controls="conditional-before-spa">
+
+              <label class="govuk-label govuk-radios__label" for="before-spa">
+                Before they reach State Pension age
+              </label>
+            </div>
+
+            <div
+              class="govuk-radios__conditional govuk-radios__conditional--hidden"
+              id="conditional-before-spa">
+
+              <div class="govuk-form-group">
+
+                <fieldset class="govuk-fieldset">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    When will they stop paying National Insurance?
+                  </legend>
+
+                  <div class="govuk-date-input">
+
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="stopMonth">
+                          Month
+                        </label>
+                        <input
+                          class="govuk-input govuk-date-input__input govuk-input--width-2"
+                          id="stopMonth"
+                          name="stopMonth"
+                          type="text"
+                          inputmode="numeric">
+                      </div>
+                    </div>
+
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="stopYear">
+                          Year
+                        </label>
+                        <input
+                          class="govuk-input govuk-date-input__input govuk-input--width-4"
+                          id="stopYear"
+                          name="stopYear"
+                          type="text"
+                          inputmode="numeric">
+                      </div>
+                    </div>
+
+                  </div>
+
+                </fieldset>
+
+              </div>
+
+            </div>
+
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="already-stopped"
+                name="niStopScenario"
+                type="radio"
+                value="already-stopped">
+
+              <label class="govuk-label govuk-radios__label" for="already-stopped">
+                They have already stopped paying National Insurance or receiving National Insurance credits
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

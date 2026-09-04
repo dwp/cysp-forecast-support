@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFCYSP Forecast enquiry – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include '../includes/_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+       <h1 class="govuk-heading-l">Forecast information for {{ data.person.personalDetails.NINO }} </h1> 
+
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link"  href="overview">Overview</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="national-insurance">National insurance summary</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="improve-state-pension">Improve State Pension</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link"  href="starting-amounts">Starting amounts</a>
+          </li>
+        </ul>
+      </nav>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-6">National insurance summary</h2>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>{{ data.person.personalDetails.qualifyingYears }} years of full contributions</li>
+        <li>{{ data.person.personalDetails.forecastYearsNeeded }} to contribute before 5 April {{ data.person.personalDetails.FRY.split(' (')[0].split(' to ')[0] }}</li>
+      </ul>
+
+<table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--s">
+    {{ data.person.nationalInsuranceSummary.length }} years with payable gaps
+    </caption>
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Tax year</th>
+        <th scope="col" class="govuk-table__header">Class</th>
+        <th scope="col" class="govuk-table__header">Cost</th>
+        <th scope="col" class="govuk-table__header">Payable until</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    {% for year in data.person.nationalInsuranceSummary %}
+    <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">{{ year.taxYear }}</th>
+        <td class="govuk-table__cell">{{ year.class }}</td>
+        <td class="govuk-table__cell">{{ year.Amount }}</td>
+        <td class="govuk-table__cell">{{ year.payableUntil }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+      
+    </div>
+</div>
+
+
+{% endblock %}

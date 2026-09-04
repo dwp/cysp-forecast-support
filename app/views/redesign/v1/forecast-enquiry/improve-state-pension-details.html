@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFCYSP Forecast enquiry – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include '../includes/_nav.html' %}
+</div>
+</header>
+
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back to record",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  {% set selectedOption = data.option | int %}
+    {% for option in data.person.paymentOptions %}
+      {% if option.optionNumber == selectedOption %}
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-l">Payment option {{ option.optionNumber }}             
+                    {% if option.tag %}
+                      <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-2">
+                        {{ option.tag }}
+                      </strong>
+                    {% endif %}  
+                  </h1>
+
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Current State pension is {{ data.person.personalDetails.estimateTo }}</li>
+                    <li>Improves to {{ option.forecast }}</li>
+                    <li>Increase of {{ option.extraWeekly }} a week.</li>
+                  </ul>
+
+                  <table class="govuk-table">
+                     <caption class="govuk-table__caption govuk-table__caption--s"> {{ option.yearsAdded }} year{% if option.yearsAdded != 1 %}s{% endif %} with gaps</caption>
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Tax year</th>
+                        <th scope="col" class="govuk-table__header">Class</th>
+                        <th scope="col" class="govuk-table__header">Cost</th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      {% for gap in option.gaps %}
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">{{ gap.taxYear }}</td>
+                        <td class="govuk-table__cell">{{ gap.class }}</td>
+                        <td class="govuk-table__cell">{{ gap.cost }}</td>
+                      </tr>
+                      {% endfor %}
+                      <tr class="govuk-table__row">
+                          <td class="govuk-table__cell" colspan="2"><strong>Total cost</strong></td>
+                          <td class="govuk-table__cell"><strong>{{ option.totalCost }}</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <p class="govuk-body">This option is available until {{ option.payableUntil }}</p>
+
+
+
+
+
+                  
+                  <p class="govuk-body"><a class="govuk-link" href="improve-state-pension">Select a different option</a></p>
+
+
+            </div>
+        </div>
+
+      {% endif %}
+    {% endfor %}
+
+{% endblock %}
