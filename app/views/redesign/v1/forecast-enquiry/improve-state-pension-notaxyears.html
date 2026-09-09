@@ -146,7 +146,6 @@ SFCYSP Forecast enquiry – {{ serviceName }} – GOV.UK Prototype Kit
   <caption class="govuk-table__caption govuk-table__caption--s ">{{ data.person.nationalInsuranceSummary.length }} years with payable gaps</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Tax years</th>
       <th scope="col" class="govuk-table__header">Improve to</th>
       <th scope="col" class="govuk-table__header">Increase</th>
       <th scope="col" class="govuk-table__header">Total cost</th>
@@ -160,19 +159,13 @@ SFCYSP Forecast enquiry – {{ serviceName }} – GOV.UK Prototype Kit
     {% for option in data.person.paymentOptions %}
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">
-      {% for gap in option.gaps %}
-      {{ gap.taxYear }}<br>
-      {% endfor %}
-      </th>
-      <td class="govuk-table__cell">
-      
         {% if option.tag %}
           <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-1">
             {{ option.tag }}
           </strong> <br>
         {% endif %} 
         {{ option.forecast }} a week
-      </td>
+      </th>
       <td class="govuk-table__cell">
         {{ option.extraWeekly }} a week
       </td>

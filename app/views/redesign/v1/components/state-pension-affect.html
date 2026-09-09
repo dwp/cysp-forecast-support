@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFCYSP Forecast enquiry – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  {% set selectedOption = data.option | int %}
+    {% for option in data.person.paymentOptions %}
+      {% if option.optionNumber == selectedOption %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">How this will affect your State Pension</caption>
+
+    <!-- If user says they have already stopped contributing NI or NI credits -->
+
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header"></th>
+        <th scope="col" class="govuk-table__header">If you contribute until 5 April 2026</th>
+        <th scope="col" class="govuk-table__header">If you contribute until 5 April            
+            {% if data.stopDate %}
+            {{ data.stopDate.split(' ').pop() }}              
+            {% else %}
+            {{ data.person.personalDetails.statePensionDate.split(' ').pop() }}              
+            {% endif %}
+        </th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+            Your forecast if you pay for Option {{ option.optionNumber }}
+        </th>
+            
+            <td class="govuk-table__cell">{{ option.forecast }}</td>
+            <td class="govuk-table__cell">£{{ ( selectedForecast + (data.futureYears * 6.89) ).toFixed(2) }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">The most you can increase your forecast to</th>
+            <td class="govuk-table__cell">£198.02 per week</td>
+            <td class="govuk-table__cell">£241.30 per week</td>
+        </tr>
+    </tbody>
+</table>
+
+
+{% set maxOption = data.person.paymentOptions[data.person.paymentOptions.length - 1] %}
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header">
+        How this will affect their State Pension
+      </th>
+      <th class="govuk-table__header">
+        If they contribute until {{ data.stopDate }}
+      </th>
+      <th class="govuk-table__header">
+        If they contribute until {{ data.person.personalDetails.statePensionDate }}
+      </th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        Your forecast if you pay for Option {{ option.optionNumber }}
+      </th>
+
+      <td class="govuk-table__cell">
+        {{ option.forecast }}
+      </td>
+
+      <td class="govuk-table__cell">
+        £{{((option.forecast | replace('£', '') | float) + (data.futureYears * 6.89)).toFixed(2)}}
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        Your forecast if you pay for all available gaps
+      </th>
+
+      <td class="govuk-table__cell">
+        {{ maxOption.forecast }}
+      </td>
+
+      <td class="govuk-table__cell">
+        £{{((maxOption.forecast | replace('£', '') | float) +(data.futureYears * 6.89)).toFixed(2)}}
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+</div>
+</div>
+
+      {% endif %}
+    {% endfor %}
+
+{% endblock %}

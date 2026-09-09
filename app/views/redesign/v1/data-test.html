@@ -63,4 +63,49 @@
 {{ data | dump }}
 </pre>
 
+
+<table class="govuk-table" data-module="moj-sortable-table">
+  <caption class="govuk-table__caption govuk-table__caption--s ">{{ data.person.nationalInsuranceSummary.length }} years with payable gaps</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="none">
+        Tax year
+      </th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">
+        Improve to
+      </th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">
+        Increase
+      </th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">
+        Total cost
+      </th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">
+        Payable until
+      </th>
+      <th scope="col" class="govuk-table__header">
+        Payment Option
+      </th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    {% for option in data.person.paymentOptions %}
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell" data-sort-value="{{ option.gaps[0].taxYear | replace('/', '') | replace('-', '') }}">
+        {% for gap in option.gaps %}
+          {{ gap.taxYear }}<br>
+        {% endfor %}
+      </td>
+      <td class="govuk-table__cell" data-sort-value="{{ option.forecast | replace('£', '') }}">{{ option.forecast }} a week</td>
+      <td class="govuk-table__cell" data-sort-value="{{ option.extraWeekly | replace('£', '') }}">{{ option.extraWeekly }} a week</td>
+      <td class="govuk-table__cell" data-sort-value="{{ option.totalCost | replace('£', '') | replace(',', '') }}">{{ option.totalCost }}</td>
+      <td class="govuk-table__cell" data-sort-value="{{ option.payableUntilSort }}">{{ option.payableUntil }}</td>
+      <td class="govuk-table__cell"><a href=""> Option {{ option.optionNumber }}</a></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
 {% endblock %}

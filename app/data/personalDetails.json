@@ -124,7 +124,6 @@
       }
     ]   
     },
-
     "RN000002A": {
   "personalDetails": {
     "NINO": "RN000002A",
@@ -137,7 +136,6 @@
     "forecastYearsNeeded": "4 years",
     "COPE": "£0"
   },
-
   "nationalInsuranceSummary": [
     {
       "taxYear": "2021 to 2022",
@@ -152,7 +150,6 @@
       "payableUntil": "5 April 2027"
     }
   ],
-
   "startingAmounts": {
     "oldRulesBasic": "£99.42",
     "oldRulesAdditional": "£6.45",
@@ -161,7 +158,6 @@
     "newRulesRDA": "£0",
     "newRulesTotal": "£111.18"
   },
-
   "paymentOptions": [
     {
       "optionNumber": 1,
@@ -208,7 +204,7 @@
   "personalDetails": {
     "NINO": "RN000003A",
     "statePensionDate": "1 November 2026",
-    "FRY": "2025-26 (1 year to FRY)",
+    "FRY": "2025 to 26 (1 year to FRY)",
     "estimateTo": "£241.30",
     "qualifyingYears": "35",
     "mostTheyCanGet": "£241.30",
@@ -216,7 +212,6 @@
     "forecastYearsNeeded": "1 year",
     "COPE": "£2.55"
   },
-
   "nationalInsuranceSummary": [
     {
       "taxYear": "2024 to 2025",
@@ -237,7 +232,6 @@
       "payableUntil": "5 April 2028"
     }
   ],
-
   "startingAmounts": {
     "oldRulesBasic": "£119.30",
     "oldRulesAdditional": "£29.21",
@@ -246,16 +240,14 @@
     "newRulesRDA": "£2.55",
     "newRulesTotal": "£135.31"
   },
-
   "paymentOptions": []
 },
 "RN000004A": {
   "journey": "forecast-enquiry/forecast-enquiry-rre",
-
   "personalDetails": {
     "NINO": "RN000004A",
     "statePensionDate": "1 November 2052",
-    "FRY": "2051-52 (29 years to FRY)",
+    "FRY": "2051 to 52 (29 years to FRY)",
     "estimateTo": "£83.73",
     "qualifyingYears": "17",
     "mostTheyCanGet": null,
@@ -267,14 +259,10 @@
       "widowedOrDivorced": "£208.20"
     }
   },
-
   "nationalInsuranceSummary": [],
-
   "startingAmounts": {},
-
   "paymentOptions": []
 },
-
   "RN000005A": {
     "journey": "cope/checking-national-insurance-record",
     "personalDetails": {
@@ -305,7 +293,6 @@
     "forecastYearsNeeded": "7 years",
     "COPE": "£0"
   },
-
   "nationalInsuranceSummary": [
     {
       "taxYear": "2023 to 2024",
@@ -326,7 +313,6 @@
       "payableUntil": "5 April 2027"
     }
   ],
-
   "startingAmounts": {
     "oldRulesBasic": "£99.42",
     "oldRulesAdditional": "£6.45",
@@ -335,7 +321,6 @@
     "newRulesRDA": "£0",
     "newRulesTotal": "£111.18"
   },
-
   "paymentOptions": [
     {
       "optionNumber": 1,
@@ -354,7 +339,6 @@
         }
       ]
     },
-
     {
       "optionNumber": 2,
       "forecast": "£199.94",
@@ -376,7 +360,6 @@
         }
       ]
     },
-
     {
       "optionNumber": 3,
       "tag": "Most impactful",
@@ -406,20 +389,18 @@
     }
   ]
 },
-
 "RN000009A": {
   "personalDetails": {
     "NINO": "RN000009A",
     "statePensionDate": "25 March 2034",
     "FRY": "2033 to 2034 (7 years to FRY)",
     "estimateTo": "£98.68",
-    "qualifyingYears": "27",
-    "mostTheyCanGet": "£241.30",
-    "forecast": "£241.30",
+    "qualifyingYears": "15",
+    "mostTheyCanGet": "£179.14",
+    "forecast": "£146.91",
     "forecastYearsNeeded": "7 years",
     "COPE": "£0"
   },
-
   "nationalInsuranceSummary": [
     {
       "taxYear": "2023 to 2024",
@@ -452,7 +433,6 @@
       "payableUntil": "5 April 2028"
     }
   ],
-
   "startingAmounts": {
     "oldRulesBasic": "£99.42",
     "oldRulesAdditional": "£6.45",
@@ -461,7 +441,6 @@
     "newRulesRDA": "£0",
     "newRulesTotal": "£111.18"
   },
-
   "paymentOptions": [
     {
       "optionNumber": 1,
@@ -603,13 +582,12 @@
     "statePensionDate": "25 March 2034",
     "FRY": "2033 to 2034 (7 years to FRY)",
     "estimateTo": "£98.68",
-    "qualifyingYears": "27",
-    "mostTheyCanGet": "£241.30",
-    "forecast": "£241.30",
+    "qualifyingYears": "15",
+    "mostTheyCanGet": "£193.59",
+    "forecast": "£145.36",
     "forecastYearsNeeded": "7 years",
     "COPE": "£0"
   },
-
   "nationalInsuranceSummary": [
     {
       "taxYear": "2024 to 2025",
@@ -654,7 +632,6 @@
       "payableUntil": "5 April 2028"
     }
   ],
-
   "startingAmounts": {
     "oldRulesBasic": "£99.42",
     "oldRulesAdditional": "£6.45",
@@ -663,7 +640,6 @@
     "newRulesRDA": "£0",
     "newRulesTotal": "£111.18"
   },
-
   "paymentOptions": [
     {
       "optionNumber": 1,
@@ -886,5 +862,4 @@
     }
   ]
 }
-
 }

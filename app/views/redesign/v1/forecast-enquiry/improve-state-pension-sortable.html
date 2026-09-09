@@ -142,49 +142,32 @@ SFCYSP Forecast enquiry – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-<table class="govuk-table">
+<table class="govuk-table" data-module="moj-sortable-table">
   <caption class="govuk-table__caption govuk-table__caption--s ">{{ data.person.nationalInsuranceSummary.length }} years with payable gaps</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Tax years</th>
-      <th scope="col" class="govuk-table__header">Improve to</th>
-      <th scope="col" class="govuk-table__header">Increase</th>
-      <th scope="col" class="govuk-table__header">Total cost</th>
-      <th scope="col" class="govuk-table__header">Payable until</th>
-      <th scope="col" class="govuk-table__header">Payment option</th>
-
+      <th scope="col" class="govuk-table__header" aria-sort="none">Tax year</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Improve to</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Increase</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Total cost</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Payable until</th>
+      <th scope="col" class="govuk-table__header">Payment Option</th>
     </tr>
   </thead>
 
   <tbody class="govuk-table__body">
     {% for option in data.person.paymentOptions %}
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">
-      {% for gap in option.gaps %}
-      {{ gap.taxYear }}<br>
-      {% endfor %}
-      </th>
-      <td class="govuk-table__cell">
-      
-        {% if option.tag %}
-          <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-1">
-            {{ option.tag }}
-          </strong> <br>
-        {% endif %} 
-        {{ option.forecast }} a week
+      <td class="govuk-table__cell" data-sort-value="{{ option.gaps[0].taxYear | replace('/', '') | replace('-', '') }}">
+        {% for gap in option.gaps %}
+          {{ gap.taxYear }}<br>
+        {% endfor %}
       </td>
-      <td class="govuk-table__cell">
-        {{ option.extraWeekly }} a week
-      </td>
-      <td class="govuk-table__cell">
-        {{ option.totalCost }}
-      </td>
-      <td class="govuk-table__cell">
-        {{ option.payableUntil }}
-      </td>
-      <td class="govuk-table__cell">
-        <a href="improve-state-pension-details?option={{option.optionNumber}}">Option {{ option.optionNumber }} </a>
-      </td>
+      <td class="govuk-table__cell" data-sort-value="{{ option.forecast | replace('£', '') }}">{{ option.forecast }} a week</td>
+      <td class="govuk-table__cell" data-sort-value="{{ option.extraWeekly | replace('£', '') }}">{{ option.extraWeekly }} a week</td>
+      <td class="govuk-table__cell" data-sort-value="{{ option.totalCost | replace('£', '') | replace(',', '') }}">{{ option.totalCost }}</td>
+      <td class="govuk-table__cell" data-sort-value="{{ option.payableUntilSort }}">{{ option.payableUntil }}</td>
+      <td class="govuk-table__cell"><a href="improve-state-pension-details?option={{option.optionNumber}}"> Option {{ option.optionNumber }}</a></a></td>
     </tr>
     {% endfor %}
   </tbody>

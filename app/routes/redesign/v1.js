@@ -7,6 +7,8 @@ const people = require('../../data/personalDetails.json')
 router.post('/redesign/v1/find-nino', function (req, res) {
 
     delete req.session.data.ninoError
+    // Clear any previously selected stop date
+    delete req.session.data.stopDate
 
     const niNumber = (req.session.data['national-insurance-number'] || '')
         .replace(/\s/g, '')
@@ -23,21 +25,16 @@ router.post('/redesign/v1/find-nino', function (req, res) {
         if (person.journey === 'forecast-enquiry/forecast-enquiry-rre') {
             return res.redirect('/redesign/v1/forecast-enquiry/forecast-enquiry-rre')
         }
-
         if (person.journey === 'cope/checking-national-insurance-record') {
             return res.redirect('/redesign/v1/cope/checking-national-insurance-record')
         }
-
         if (person.journey === 'exclusions/isle-of-man') {
             return res.redirect('/redesign/v1/exclusions/isle-of-man')
         }
-
         if (person.journey === 'exclusions/deceased') {
             return res.redirect('/redesign/v1/exclusions/deceased')
         }
-
         return res.redirect('/redesign/v1/route')
-
     }
 
     delete req.session.data.person
@@ -88,6 +85,14 @@ router.post(
     const scenario = req.session.data.niStopScenario
 
     let stopDate
+    let futureYears = 0
+
+    const fryMatch =
+      req.session.data.person.personalDetails.FRY.match(/\((\d+)\s+years?/)
+
+    const yearsToFRY = fryMatch
+      ? Number(fryMatch[1])
+      : 0
 
     if (scenario === 'spa') {
 
@@ -96,34 +101,51 @@ router.post(
 
       stopDate = spaDate.split(' ').slice(1).join(' ')
 
+      futureYears = yearsToFRY
+
     } else if (scenario === 'before-spa') {
 
       const months = [
-        'January','February','March','April',
-        'May','June','July','August',
-        'September','October','November','December'
+        'January', 'February', 'March', 'April',
+        'May', 'June', 'July', 'August',
+        'September', 'October', 'November', 'December'
       ]
 
       stopDate =
         `${months[Number(req.session.data.stopMonth) - 1]} ${req.session.data.stopYear}`
+
+      const currentYear = new Date().getFullYear()
+
+      futureYears =
+        Number(req.session.data.stopYear) - currentYear
+
+      if (futureYears < 0) {
+        futureYears = 0
+      }
+
+      if (futureYears > yearsToFRY) {
+        futureYears = yearsToFRY
+      }
 
     } else if (scenario === 'already-stopped') {
 
       const today = new Date()
 
       const months = [
-        'January','February','March','April',
-        'May','June','July','August',
-        'September','October','November','December'
+        'January', 'February', 'March', 'April',
+        'May', 'June', 'July', 'August',
+        'September', 'October', 'November', 'December'
       ]
 
       stopDate =
         `${months[today.getMonth()]} ${today.getFullYear()}`
+
+      futureYears = 0
     }
 
     req.session.data.stopDate = stopDate
+    req.session.data.futureYears = futureYears
 
     res.redirect('/redesign/v1/forecast-enquiry/improve-state-pension')
-
   }
 )

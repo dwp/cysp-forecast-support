@@ -102,7 +102,7 @@
           New State Pension
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data.person.startingAmounts.newRulesNewStatePension }}
+          {{ data.person.personalDetails.estimateTo }}
         </dd>
       </div>
 
@@ -111,7 +111,7 @@
           Less Rebate Derived Amount (RDA)
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data.person.startingAmounts.newRulesRDA }}
+          {{ data.person.personalDetails.COPE }}
         </dd>
       </div>
 
@@ -120,7 +120,8 @@
           Total
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data.person.startingAmounts.newRulesTotal }}
+          {% set estimateTo = data.person.personalDetails.estimateTo | replace('£', '') | float %}
+          {% set newRulesRDA = data.person.personalDetails.COPE | replace('£', '') | float %}£{{(estimateTo - newRulesRDA).toFixed(2)}}
         </dd>
       </div>
     </dl>

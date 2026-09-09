@@ -31,6 +31,7 @@
 
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
+              <span class="govuk-caption-l">{{ data.person.personalDetails.NINO }}</span>
                 <h1 class="govuk-heading-l">Payment option {{ option.optionNumber }}             
                     {% if option.tag %}
                       <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-2">
@@ -41,10 +42,11 @@
 
                   <ul class="govuk-list govuk-list--bullet">
                     <li>Current State pension is {{ data.person.personalDetails.estimateTo }}</li>
-                    <li>Improves to {{ option.forecast }}</li>
+                    <li>Improves to {{ option.forecast }} a week</li>
                     <li>Increase of {{ option.extraWeekly }} a week.</li>
                   </ul>
 
+                  <div style=" border: 1px solid #b1b4b6; padding: 1.5em 1em 0; margin-bottom: 2em;">
                   <table class="govuk-table">
                      <caption class="govuk-table__caption govuk-table__caption--s"> {{ option.yearsAdded }} year{% if option.yearsAdded != 1 %}s{% endif %} with gaps</caption>
                     <thead class="govuk-table__head">
@@ -70,13 +72,136 @@
                   </table>
 
                   <p class="govuk-body">This option is available until {{ option.payableUntil }}</p>
-
-
-
-
-
-                  
                   <p class="govuk-body"><a class="govuk-link" href="improve-state-pension">Select a different option</a></p>
+</div>
+
+{% set showCurrentColumn = not data.selectedOption %}
+
+{% set showCurrentColumn = data.futureYears <= 0 %}
+
+{% set showCurrentColumn = (data.futureYears | int) > 0 %}
+
+{% set showCurrentColumn = (data.futureYears | int) > 0 %}
+
+{% set maxForecast =
+  data.person.personalDetails.mostTheyCanGet
+  | replace('£', '')
+  | float
+%}
+
+<table class="govuk-table">
+
+  <caption class="govuk-table__caption govuk-table__caption--m">
+    How this will affect their State Pension
+  </caption>
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header">
+      </th>
+
+      {% if showCurrentColumn %}
+      <th scope="col" class="govuk-table__header">
+        If they contribute until 5 April 2026
+      </th>
+      {% endif %}
+
+      <th scope="col" class="govuk-table__header">
+        If they contribute until 5 April
+        {% if data.stopDate %}
+          {{ data.stopDate.split(' ').pop() }}
+        {% else %}
+          {{ data.person.personalDetails.statePensionDate.split(' ').pop() }}
+        {% endif %}
+      </th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        Forecast if they pay for Option {{ option.optionNumber }}
+      </th>
+
+      {% if showCurrentColumn %}
+      <td class="govuk-table__cell">
+        {{ option.forecast }} a week
+      </td>
+      {% endif %}
+
+      <td class="govuk-table__cell">
+        {% set projectedForecast =
+          (option.forecast | replace('£', '') | float) +
+          ((data.futureYears | int) * 6.89)
+        %}
+
+        £{{
+          (
+            projectedForecast
+            if projectedForecast < maxForecast
+            else maxForecast
+          ).toFixed(2)
+        }} a week
+      </td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        Forecast if they pay for all available gaps
+      </th>
+
+      {% if showCurrentColumn %}
+      <td class="govuk-table__cell">
+        {% for paymentOption in data.person.paymentOptions %}
+          {% if paymentOption.tag == "Most impactful" %}
+            {{ paymentOption.forecast }} a week
+          {% endif %}
+        {% endfor %}
+      </td>
+      {% endif %}
+
+      <td class="govuk-table__cell">
+        {% for paymentOption in data.person.paymentOptions %}
+          {% if paymentOption.tag == "Most impactful" %}
+
+            {% set projectedForecast =
+              (paymentOption.forecast | replace('£', '') | float) +
+              ((data.futureYears | int) * 6.89)
+            %}
+
+            £{{
+              (
+                projectedForecast
+                if projectedForecast < maxForecast
+                else maxForecast
+              ).toFixed(2)
+            }} a week
+
+          {% endif %}
+        {% endfor %}
+      </td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+<p class="govuk-body">Their forecast:</p>
+<ul class="govuk-list govuk-list--bullet">
+    <li>is based on their National Insurance record up to 5 April 2026</li>
+    {% if data.futureYears > 0 %}
+      <li>assumes that they will contribute another {{ data.futureYears }} year{% if data.futureYears != 1 %}s{% endif %}</li>
+    {% endif %}
+    <li>does not include any increase due to inflation</li>
+</ul>
+                  
 
 
             </div>
