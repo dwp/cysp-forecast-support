@@ -124,16 +124,16 @@
       }
     ]   
     },
-    "RN000002A": {
+  "RN000002A": {
   "personalDetails": {
     "NINO": "RN000002A",
     "statePensionDate": "11 January 2028",
     "FRY": "2027 to 2028 (2 years to FRY)",
-    "estimateTo": "£138.55",
+    "estimateTo": "£186.15",
     "qualifyingYears": "27",
-    "mostTheyCanGet": "£169.35",
-    "forecast": "£159.08",
-    "forecastYearsNeeded": "4 years",
+    "mostTheyCanGet": "£213.75",
+    "forecast": "£199.97",
+    "forecastYearsNeeded": "2 years",
     "COPE": "£0"
   },
   "nationalInsuranceSummary": [
@@ -178,7 +178,7 @@
     },
     {
       "optionNumber": 2,
-      "tag": "Highest",
+      "tag": "Most impactful",
       "forecast": "£199.94",
       "extraWeekly": "£13.79",
       "extraYearly": "£717.08",

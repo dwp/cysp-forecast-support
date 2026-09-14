@@ -1,0 +1,40 @@
+
+{% set navItems = [
+  {
+    href: "overview",
+    text: "Overview",
+    page: "overview"
+  },
+  {
+    href: "national-insurance",
+    text: "National Insurance summary",
+    page: "national-insurance"
+  },
+  {
+    href: "improve-state-pension",
+    text: "Improve State Pension",
+    page: "improve-state-pension"
+  },
+  {
+    href: "starting-amounts",
+    text: "Starting amounts",
+    page: "starting-amounts"
+  },
+  {
+    href: "gaps-since-2006",
+    text: "Gaps since 2006",
+    page: "gaps-since-2006"
+  }
+] %}
+
+<nav class="dwp-horizontal-navigation govuk-!-margin-bottom-6" aria-label="Horizontal">
+  <ul class="dwp-horizontal-navigation__list">
+    {% for item in navItems %}
+      <li class="dwp-horizontal-navigation__item {% if currentPage == item.page %} dwp-horizontal-navigation__item--selected{% endif %}">
+        <a class="dwp-horizontal-navigation__link" href="{{ item.href }}" >{{ item.text }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+

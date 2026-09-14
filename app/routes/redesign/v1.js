@@ -4,10 +4,16 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 const people = require('../../data/personalDetails.json')
 
+router.get('/:page', function (req, res) {
+  res.render(req.params.page, {
+    currentPage: req.params.page
+  })
+})
+
 router.post('/redesign/v1/find-nino', function (req, res) {
 
     delete req.session.data.ninoError
-    // Clear any previously selected stop date
+    delete req.session.data.futureYears
     delete req.session.data.stopDate
 
     const niNumber = (req.session.data['national-insurance-number'] || '')
@@ -21,9 +27,19 @@ router.post('/redesign/v1/find-nino', function (req, res) {
         delete req.session.data.ninoError
 
         req.session.data.person = person
+        
+        const fryMatch =
+          person.personalDetails.FRY?.match(/\((\d+)\s+years?/)
+
+        req.session.data.futureYears = fryMatch
+          ? Number(fryMatch[1])
+          : 0
+
+        req.session.data.niStopScenario = 'spa'
+        req.session.data.stopDate = ''
 
         if (person.journey === 'forecast-enquiry/forecast-enquiry-rre') {
-            return res.redirect('/redesign/v1/forecast-enquiry/forecast-enquiry-rre')
+            return res.redirect('/redesign/v1/forecast-enquiry/reduced-rate-election')
         }
         if (person.journey === 'cope/checking-national-insurance-record') {
             return res.redirect('/redesign/v1/cope/checking-national-insurance-record')
@@ -93,6 +109,10 @@ router.post(
     const yearsToFRY = fryMatch
       ? Number(fryMatch[1])
       : 0
+
+      console.log('scenario', scenario)
+      console.log('FRY', req.session.data.person.personalDetails.FRY)
+      console.log('yearsToFRY', yearsToFRY)
 
     if (scenario === 'spa') {
 

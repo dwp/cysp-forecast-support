@@ -24,29 +24,16 @@
 
        <h1 class="govuk-heading-l">Forecast information for {{ data.person.personalDetails.NINO }} </h1> 
 
-      <nav class="moj-sub-navigation" aria-label="Sub navigation">
-        <ul class="moj-sub-navigation__list">
-          <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link"  href="overview">Overview</a>
-          </li>
-          <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link" aria-current="page" href="national-insurance">National insurance summary</a>
-          </li>
-          <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link" href="improve-state-pension">Improve State Pension</a>
-          </li>
-          <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link"  href="starting-amounts">Starting amounts</a>
-          </li>
-        </ul>
-      </nav>
+    {% set currentPage = "national-insurance" %}
+    {% include "../includes/_sub-nav.html" %}
+
 </div>
 </div>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-6">National insurance summary</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-6">National Insurance summary</h2>
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
         <li>{{ data.person.personalDetails.qualifyingYears }} years of full contributions</li>

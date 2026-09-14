@@ -76,13 +76,9 @@
 </div>
 
 {% set showCurrentColumn = not data.selectedOption %}
-
 {% set showCurrentColumn = data.futureYears <= 0 %}
-
 {% set showCurrentColumn = (data.futureYears | int) > 0 %}
-
 {% set showCurrentColumn = (data.futureYears | int) > 0 %}
-
 {% set maxForecast =
   data.person.personalDetails.mostTheyCanGet
   | replace('£', '')
@@ -98,8 +94,7 @@
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
 
-      <th scope="col" class="govuk-table__header">
-      </th>
+      <th scope="col" class="govuk-table__header"></th>
 
       {% if showCurrentColumn %}
       <th scope="col" class="govuk-table__header">
@@ -201,8 +196,6 @@
     {% endif %}
     <li>does not include any increase due to inflation</li>
 </ul>
-                  
-
 
             </div>
         </div>

@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFCYSP Forecast enquiry - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+<header data-module="govuk-header" class="dwp-header">
+<div class="dwp-header__content govuk-width-container">
+<div class="dwp-header__service-name">
+  <a href="/index" class="dwp-header__link">{{serviceName}}</a>
+</div>
+          {% include '../includes/_nav.html' %}
+</div>
+</header>
+{% endblock %}
+
+{# Find whether any gap is Class 2 #}
+{% set hasClass2 = false %}
+
+{% for record in data.person.nationalInsuranceSummary %}
+  {% if record.class == "2" or record.class == "2 and 3" %}
+    {% set hasClass2 = true %}
+  {% endif %}
+{% endfor %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">
+      Forecast information for {{ data.person.personalDetails.NINO }}
+    </h1>
+
+    {% set currentPage = "gaps-since-2006" %}
+    {% include "../includes/_sub-nav.html" %}
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-6">
+      Gaps since 2006
+    </h2>
+
+    {% if hasClass2 %}
+
+      <p class="govuk-body">
+        Some message about not being able to pay
+      </p>
+
+    {% else %}
+
+      <p class="govuk-body">
+        Use this section to respond to customers who completed the request a call back form.
+      </p>
+
+      <table class="govuk-table govuk-!-margin-bottom-6">
+        <caption class="govuk-table__caption govuk-table__caption--s">
+          {{ data.person.nationalInsuranceSummary.length }} years with gaps
+        </caption>
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Tax year</th>
+            <th scope="col" class="govuk-table__header">Gaps in record</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          {% for record in data.person.nationalInsuranceSummary %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              {{ record.taxYear }}
+            </th>
+            <td class="govuk-table__cell">
+              {% if (record.Amount | replace('£', '') | replace(',', '') | float) < 956.90 %}
+              Partial gap year
+              {% else %}
+              Full gap year
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <button type="submit" onclick="window.location.href='gaps-since-2006-earnings'" class="govuk-button" data-module="govuk-button">
+        Calculate gap costs
+      </button>
+
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}
