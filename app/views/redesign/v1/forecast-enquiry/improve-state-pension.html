@@ -105,7 +105,7 @@ SFCYSP Forecast enquiry – {{ serviceName }} – GOV.UK Prototype Kit
               Current State Pension
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data.person.personalDetails.estimateTo }}
+              £{{ rateTable[data.person.personalDetails.qualifyingYears | int] }}
             </dd>
           </div>
           <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">

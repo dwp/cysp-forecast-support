@@ -3,10 +3,17 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
 const people = require('../../data/personalDetails.json')
+const rateTable = require('../../data/rate-table.json')
+
+router.use((req, res, next) => {
+  res.locals.rateTable = rateTable
+  next()
+})
 
 router.get('/:page', function (req, res) {
   res.render(req.params.page, {
-    currentPage: req.params.page
+    currentPage: req.params.page,
+    rateTable
   })
 })
 

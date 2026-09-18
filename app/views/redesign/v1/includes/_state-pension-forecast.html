@@ -1,0 +1,169 @@
+{# --------------------------------------------------------
+   Only show the current-year column when there are future
+   years remaining to contribute.
+--------------------------------------------------------- #}
+
+{% set showCurrentColumn = (data.futureYears | int) > 0 %}
+
+{# --------------------------------------------------------
+   Base values
+--------------------------------------------------------- #}
+
+{% set qualifyingYears = data.person.personalDetails.qualifyingYears | int %}
+{% set yearsToFRY = data.futureYears | int %}
+
+{# --------------------------------------------------------
+   Selected option calculations
+--------------------------------------------------------- #}
+
+{% set selectedCurrentYears = qualifyingYears + option.yearsAdded %}
+{% set selectedFryYears = qualifyingYears + option.yearsAdded + yearsToFRY %}
+
+{# Cap at 35 qualifying years #}
+
+{% if selectedCurrentYears > 35 %}
+  {% set selectedCurrentYears = 35 %}
+{% endif %}
+
+{% if selectedFryYears > 35 %}
+  {% set selectedFryYears = 35 %}
+{% endif %}
+
+{# --------------------------------------------------------
+   Find the "Most impactful" option
+   This represents paying all available gaps
+--------------------------------------------------------- #}
+
+{% set allGapsYearsAdded = 0 %}
+
+{% for paymentOption in data.person.paymentOptions %}
+  {% if paymentOption.tag == "Most impactful" %}
+    {% set allGapsYearsAdded = paymentOption.yearsAdded %}
+  {% endif %}
+{% endfor %}
+
+{# --------------------------------------------------------
+   All-gap calculations
+--------------------------------------------------------- #}
+
+{% set allCurrentYears = qualifyingYears + allGapsYearsAdded %}
+{% set allFryYears = qualifyingYears + allGapsYearsAdded + yearsToFRY %}
+
+{% if allCurrentYears > 35 %}
+  {% set allCurrentYears = 35 %}
+{% endif %}
+
+{% if allFryYears > 35 %}
+  {% set allFryYears = 35 %}
+{% endif %}
+
+{# --------------------------------------------------------
+   Debug
+--------------------------------------------------------- #}
+
+<!--
+Current option years: {{ selectedCurrentYears }}
+FRY option years: {{ selectedFryYears }}
+
+All gaps current years: {{ allCurrentYears }}
+All gaps FRY years: {{ allFryYears }}
+-->
+
+<table class="govuk-table">
+
+  <caption class="govuk-table__caption govuk-table__caption--m">
+    How this will affect their State Pension
+  </caption>
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header"></th>
+
+      {% if showCurrentColumn %}
+        <th scope="col" class="govuk-table__header">
+          If they contribute until 5 April 2026
+        </th>
+      {% endif %}
+
+      <th scope="col" class="govuk-table__header">
+        If they contribute until 5 April
+        {% if data.stopDate %}
+          {{ data.stopDate.split(' ').pop() }}
+        {% else %}
+          {{ data.person.personalDetails.statePensionDate.split(' ').pop() }}
+        {% endif %}
+      </th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    {# -----------------------------------------------
+       Selected option row
+    ------------------------------------------------ #}
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        Forecast if they pay for Option {{ option.optionNumber }}
+      </th>
+
+      {% if showCurrentColumn %}
+        <td class="govuk-table__cell">
+          £{{ rateTable[selectedCurrentYears] }} a week
+        </td>
+      {% endif %}
+
+      <td class="govuk-table__cell">
+        £{{ rateTable[selectedFryYears] }} a week
+      </td>
+
+    </tr>
+
+    {# -----------------------------------------------
+       All available gaps row
+    ------------------------------------------------ #}
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        Forecast if they pay for all available gaps
+      </th>
+
+      {% if showCurrentColumn %}
+        <td class="govuk-table__cell">
+          £{{ rateTable[allCurrentYears] }} a week
+        </td>
+      {% endif %}
+
+      <td class="govuk-table__cell">
+        £{{ rateTable[allFryYears] }} a week
+      </td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+<p class="govuk-body">Their forecast:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>
+    is based on their National Insurance record up to
+    5 April 2026
+  </li>
+
+  {% if data.futureYears > 0 %}
+    <li>
+      assumes that they will contribute another
+      {{ data.futureYears }} year{% if data.futureYears != 1 %}s{% endif %}
+    </li>
+  {% endif %}
+
+  <li>
+    does not include any increase due to inflation
+  </li>
+</ul>

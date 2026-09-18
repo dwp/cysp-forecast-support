@@ -49,7 +49,7 @@
           Basic
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data.person.startingAmounts.oldRulesBasic }}
+          {{ data.person.startingAmounts.oldRulesBasic }} a week
         </dd>
       </div>
 
@@ -58,7 +58,7 @@
           Additional and graduated retirement benefit (GRB)
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data.person.startingAmounts.oldRulesAdditional }}
+          {{ data.person.startingAmounts.oldRulesAdditional }} a week
         </dd>
       </div>
 
@@ -67,7 +67,7 @@
           Total
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data.person.startingAmounts.oldRulesTotal }}
+          {{ data.person.startingAmounts.oldRulesTotal }} a week
         </dd>
       </div>
     </dl>
@@ -88,7 +88,7 @@
           New State Pension
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data.person.personalDetails.estimateTo }}
+          £{{ rateTable[data.person.personalDetails.qualifyingYears | int] }} a week
         </dd>
       </div>
 
@@ -97,7 +97,7 @@
           Minus Rebate Derived Amount (RDA)
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data.person.personalDetails.COPE }}
+          {{ data.person.personalDetails.COPE }} a week
         </dd>
       </div>
 
@@ -107,7 +107,7 @@
         </dt>
         <dd class="govuk-summary-list__value">
           {% set estimateTo = data.person.personalDetails.estimateTo | replace('£', '') | float %}
-          {% set newRulesRDA = data.person.personalDetails.COPE | replace('£', '') | float %}£{{(estimateTo - newRulesRDA).toFixed(2)}}
+          {% set newRulesRDA = data.person.personalDetails.COPE | replace('£', '') | float %}£{{(estimateTo - newRulesRDA).toFixed(2)}} a week
         </dd>
       </div>
     </dl>
