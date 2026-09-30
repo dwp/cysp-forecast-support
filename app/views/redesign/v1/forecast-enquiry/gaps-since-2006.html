@@ -30,7 +30,7 @@
   <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-l">
-      Forecast information for {{ data.person.personalDetails.NINO }}
+      Forecast information for {{ data.person.personalDetails.NINO | replace(r/(\w{2})(\w{2})(\w{2})(\w{2})(\w)/g, '$1 $2 $3 $4 $5') }}
     </h1>
 
     {% set currentPage = "gaps-since-2006" %}

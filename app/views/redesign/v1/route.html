@@ -35,7 +35,7 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">NI number: {{ data.person.personalDetails.NINO }}</span>
+              <span class="govuk-caption-l">NI number: {{ data.person.personalDetails.NINO | replace(r/(\w{2})(\w{2})(\w{2})(\w{2})(\w)/g, '$1 $2 $3 $4 $5') }}</span>
               <h1 class="govuk-fieldset__heading">How can I help you today?</h1>
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">

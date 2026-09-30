@@ -22,7 +22,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-       <h1 class="govuk-heading-l">Forecast information for {{ data.person.personalDetails.NINO }} </h1> 
+       <h1 class="govuk-heading-l">Forecast information for {{ data.person.personalDetails.NINO | replace(r/(\w{2})(\w{2})(\w{2})(\w{2})(\w)/g, '$1 $2 $3 $4 $5') }} </h1> 
 
     {% set currentPage = "national-insurance" %}
     {% include "../includes/_sub-nav.html" %}
@@ -37,7 +37,7 @@
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
         <li>{{ data.person.personalDetails.qualifyingYears }} years of full contributions</li>
-        <li>{{ data.person.personalDetails.forecastYearsNeeded }} to contribute before 5 April {{ data.person.personalDetails.FRY.split(' (')[0].split(' to ')[0] }}</li>
+        <li>{{ data.person.personalDetails.forecastYearsNeeded }} to contribute before 5 April {{ data.person.personalDetails.FRY.split(' (')[0].split(' to ')[1] }}</li>
       </ul>
 
 <table class="govuk-table">

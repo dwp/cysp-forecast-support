@@ -2,7 +2,7 @@
     "RN000001A": {
         "personalDetails":{
             "NINO": "RN000001A",
-            "statePensionDate": "25 March 2031",
+            "statePensionDate": "25 March 2035",
             "FRY": "2033 to 2034 (7 years to FRY)",
             "estimateTo": "£186.15",
             "qualifyingYears": "27",
@@ -205,12 +205,12 @@
   "personalDetails": {
     "NINO": "RN000003A",
     "statePensionDate": "1 November 2026",
-    "FRY": "2025 to 26 (1 year to FRY)",
+    "FRY": "2025 to 2026 (0 years to FRY)",
     "estimateTo": "£241.30",
     "qualifyingYears": "35",
     "mostTheyCanGet": "£241.30",
     "forecast": "£241.30",
-    "forecastYearsNeeded": "1 year",
+    "forecastYearsNeeded": "0 years",
     "COPE": "£2.55"
   },
   "nationalInsuranceSummary": [
@@ -248,7 +248,7 @@
   "personalDetails": {
     "NINO": "RN000004A",
     "statePensionDate": "1 November 2052",
-    "FRY": "2051 to 52 (29 years to FRY)",
+    "FRY": "2051 to 2052 (26 years to FRY)",
     "estimateTo": "£83.73",
     "qualifyingYears": "17",
     "mostTheyCanGet": null,

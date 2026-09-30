@@ -22,7 +22,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-       <h1 class="govuk-heading-l">Forecast information for {{ data.person.personalDetails.NINO }} </h1> 
+       <h1 class="govuk-heading-l">Forecast information for {{ data.person.personalDetails.NINO | replace(r/(\w{2})(\w{2})(\w{2})(\w{2})(\w)/g, '$1 $2 $3 $4 $5') }} </h1> 
 
       <nav class="moj-sub-navigation" aria-label="Sub navigation">
         <ul class="moj-sub-navigation__list">

@@ -83,7 +83,7 @@ router.post('/redesign/v1/alternative-format', function (req, res) {
   const option = req.session.data['alternativeFormat']
 
   if (formatRequired === 'no') {
-    return res.redirect('forecast-enquiry')
+    return res.redirect('forecast-request')
   }
 
     if (option === 'audio-format') {

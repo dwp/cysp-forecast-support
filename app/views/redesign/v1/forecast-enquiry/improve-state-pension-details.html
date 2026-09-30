@@ -31,7 +31,7 @@
 
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-              <span class="govuk-caption-l">{{ data.person.personalDetails.NINO }}</span>
+              <span class="govuk-caption-l">{{ data.person.personalDetails.NINO | replace(r/(\w{2})(\w{2})(\w{2})(\w{2})(\w)/g, '$1 $2 $3 $4 $5') }}</span>
                 <h1 class="govuk-heading-l">Payment option {{ option.optionNumber }}             
                     {% if option.tag %}
                       <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-2">
@@ -43,7 +43,9 @@
                   <ul class="govuk-list govuk-list--bullet">
                     <li>Current State pension is {{ data.person.personalDetails.estimateTo }}</li>
                     <li>Improves to {{ option.forecast }} a week</li>
-                    <li>Increase of {{ option.extraWeekly }} a week.</li>
+                    <li>Increase of {{ option.extraWeekly }} a week</li>
+                    <li>Increase of £{{ (((option.extraWeekly | replace('£', '') | float) / 7) * 365.25).toFixed(2) }} a year
+</li>
                   </ul>
 
                   <div style=" border: 1px solid #b1b4b6; padding: 1.5em 1em 0; margin-bottom: 2em;">

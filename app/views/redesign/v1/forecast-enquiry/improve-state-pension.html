@@ -19,10 +19,9 @@ SFCYSP Forecast enquiry – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block content %}
         
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l">Forecast information for {{ data.person.personalDetails.NINO }}</h1>
+    <h1 class="govuk-heading-l">Forecast information for {{ data.person.personalDetails.NINO | replace(r/(\w{2})(\w{2})(\w{2})(\w{2})(\w)/g, '$1 $2 $3 $4 $5') }}</h1>
 
     {% set currentPage = "improve-state-pension" %}
     {% include "../includes/_sub-nav.html" %}
@@ -32,8 +31,6 @@ SFCYSP Forecast enquiry – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row govuk-!-margin-bottom-6">
   <div class="govuk-grid-column-two-thirds">
-
-
 
     <h2 class="govuk-heading-m govuk-!-margin-bottom-6">Improve State Pension</h2>
 
@@ -134,7 +131,7 @@ SFCYSP Forecast enquiry – {{ serviceName }} – GOV.UK Prototype Kit
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Tax years</th>
       <th scope="col" class="govuk-table__header">Improve to</th>
-      <th scope="col" class="govuk-table__header">Increase</th>
+      <th scope="col" class="govuk-table__header">Increase of</th>
       <th scope="col" class="govuk-table__header">Total cost</th>
       <th scope="col" class="govuk-table__header">Payable until</th>
       <th scope="col" class="govuk-table__header">Payment option</th>
@@ -160,7 +157,8 @@ SFCYSP Forecast enquiry – {{ serviceName }} – GOV.UK Prototype Kit
         {{ option.forecast }} a week
       </td>
       <td class="govuk-table__cell">
-        {{ option.extraWeekly }} a week
+        {{ option.extraWeekly }} a week <br>
+        £{{ (((option.extraWeekly | replace('£', '') | float) / 7) * 365.25).toFixed(2) }} a year
       </td>
       <td class="govuk-table__cell">
         {{ option.totalCost }}
